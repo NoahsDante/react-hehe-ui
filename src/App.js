@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
+
 import {Button} from '$components'
+
 import './static/style/App.less';
 
 class App extends Component {
