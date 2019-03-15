@@ -9,7 +9,7 @@ class App extends Component {
         return (
             <div className="App">
                 <header className="App-header">
-                    <Button/>
+                    <Button disabled={true}>dddd</Button>
                 </header>
             </div>
         );
