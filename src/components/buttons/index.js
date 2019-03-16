@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import '../style/buttons.less'
 
 const Button = React.forwardRef(
-  ({className, bsPrefix, variant, size, block, active, disabled, href, type, as, ...prop}, ref) => {
+  ({className, bsPrefix, variant, size, block, active, href, type, as, ...props}, ref) => {
       const classes = classNames(
         className,
         bsPrefix,
@@ -12,11 +12,10 @@ const Button = React.forwardRef(
         `button-${size}`,
         block && 'button-block',
         active && 'active',
-        disabled && 'disabled',
       );
-
       const Component = as || 'button';
-      return (<Component {...prop} type={type} className={classes} ref={ref}/>)
+      return (
+        <Component {...props} type={type} className={classNames(classes, props.disabled && 'disabled')} ref={ref}/>)
   });
 
 
@@ -46,15 +45,15 @@ Button.propTypes = {
      * */
     active: PropTypes.bool,
     /**
-     *  禁止状态
+     *  禁止状态 禁用按钮, 防止鼠标事件
      * */
     disabled: PropTypes.bool,
     /**
-     *  button-light | button-dark | button-success | button-danger | button-warning | button-round
+     *  提供 "href" 将呈现 "<a>" 元素, as 作为button
      * */
     href: PropTypes.bool,
     /**
-     *  button-light | button-dark | button-success | button-danger | button-warning | button-round
+     *  定义 HTML 按钮类型属性
      * */
     type: PropTypes.oneOf(['button', 'submit', null]),
     /**
