@@ -8,11 +8,11 @@ import '../style/headerBar.less'
 const propTypes = {};
 const defaultProps = {};
 
-const HeaderBar = React.forwardRef(() => {
+const HeaderNav = React.forwardRef(() => {
 
     return (<div className={'bar bar-nav'}><h1 className="title">标题</h1></div>)
 });
-HeaderBar.displayName = 'HeaderBar';
-HeaderBar.propTypes = propTypes;
-HeaderBar.defaultProps = defaultProps;
-export default HeaderBar
+HeaderNav.displayName = 'HeaderBar';
+HeaderNav.propTypes = propTypes;
+HeaderNav.defaultProps = defaultProps;
+export default HeaderNav

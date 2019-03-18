@@ -1,10 +1,10 @@
-import HeaderBar from './headerBar/HeaderBar';
+import HeaderNav from './headerNav/HeaderNav';
 
 import Button from './buttons/Button';
 import ToggleButtonGroup from './buttons/toggleButtonGroup';
 
 export {
-    HeaderBar,
+    HeaderNav,
     Button,
     ToggleButtonGroup
 };
