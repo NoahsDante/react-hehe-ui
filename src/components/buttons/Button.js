@@ -6,12 +6,13 @@ import SafeAnchor from '../other/SafeAnchor'
 import '../style/buttons.less'
 
 const Button = React.forwardRef(
-    ({className, bsPrefix, variant, size, block, active, type, as, ...props}, ref) => {
+    ({className, bsPrefix, variant, size, block, active, type, as, fill, ...props}, ref) => {
         const classes = classNames(
             className,
             bsPrefix,
             `button-${variant}`,
             `button-${size}`,
+            fill && 'button-fill',
             block && 'button-block',
             active && 'active',
         );
@@ -53,6 +54,10 @@ Button.propTypes = {
      * */
     block: PropTypes.bool,
     /**
+     *  填充颜色
+     * */
+    fill: PropTypes.bool,
+    /**
      *  选中状态 \ active
      * */
     active: PropTypes.bool,
@@ -73,6 +78,7 @@ Button.propTypes = {
 Button.defaultProps = {
     bsPrefix: 'button',
     type: 'button',
+    fill: true,
     disabled: false,
     active: false
 };
