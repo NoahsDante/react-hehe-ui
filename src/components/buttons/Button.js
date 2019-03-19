@@ -64,7 +64,6 @@ const defaultProps = {
 const Button = React.forwardRef(
     ({className, bsPrefix, variant, size, block, active, type, as, fill, round, ...props}, ref) => {
         const classes = classNames(
-            className,
             bsPrefix,
             round && 'button-round',
             fill && 'button-fill',
@@ -72,6 +71,7 @@ const Button = React.forwardRef(
             size && `button-${size}`,
             block && 'button-block',
             active && 'active',
+            className
         );
         if (props.href) {
             return (
