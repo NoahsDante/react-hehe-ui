@@ -1,18 +1,38 @@
-
+import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
+
+import HeaderNavButton from './HeaderNavButton'
 
 import '../style/headerBar.less'
 
 
-const propTypes = {};
-const defaultProps = {};
+const propTypes = {
+    className:PropTypes.string,
+    title:PropTypes.string,
 
-const HeaderNav = React.forwardRef(() => {
+};
+const defaultProps = {
+    title:'标题',
+};
 
-    return (<div className={'bar bar-nav'}><h1 className="title">标题</h1></div>)
+const HeaderNav = React.forwardRef(({className,title,children,...props},ref) => {
+    const classes = classNames(
+        'bar',
+        'bar-nav',
+        className
+    );
+    return (
+        <header {...props} className={classes} ref={ref}>
+            {children}
+            {title ? <h1 className='title'>{title}</h1>:''}
+        </header>
+    )
 });
-HeaderNav.displayName = 'HeaderBar';
+HeaderNav.displayName = 'HeaderNav';
 HeaderNav.propTypes = propTypes;
 HeaderNav.defaultProps = defaultProps;
+
+HeaderNav.Buttons = HeaderNavButton;
+
 export default HeaderNav
