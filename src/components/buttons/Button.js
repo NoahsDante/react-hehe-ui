@@ -15,7 +15,7 @@ const propTypes = {
      * */
     bsPrefix: PropTypes.string,
     /**
-     *  button-light | button-dark | button-success | button-danger | button-warning
+     *  button-light | button-dark | button-success | button-danger | button-warning | button-link
      * */
     variant: PropTypes.string,
     /**

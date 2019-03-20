@@ -21,11 +21,12 @@ const propTypes = {
 };
 const defaultProps = {
     fill: false,
+    isVariant:false,
     variant:'light',
 };
-const HeaderNavButton = ({ variant,...props}) => {
+const HeaderNavButton = ({ ...props}) => {
     return (
-        <AbstractHeaderButton {...props}  variant={variant}/>
+        <AbstractHeaderButton {...props}/>
         );
 };
 

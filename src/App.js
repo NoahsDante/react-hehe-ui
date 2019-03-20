@@ -12,7 +12,10 @@ class App extends Component {
         return (
             <div className="App">
                 <HeaderNav>
-                    <HeaderNav.Icon direction='right'/>
+                    <HeaderNav.Buttons isVariant={true} variant='link'>
+                        <HeaderNav.Icon />
+                        返回
+                    </HeaderNav.Buttons>
                 </HeaderNav>
                 <header className="App-header">
                     <ToggleButtonGroup>
