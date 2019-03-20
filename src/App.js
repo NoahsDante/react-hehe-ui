@@ -12,7 +12,7 @@ class App extends Component {
         return (
             <div className="App">
                 <HeaderNav>
-                    <HeaderNav.Buttons isVariant={true} variant='link'>
+                    <HeaderNav.Buttons  variant='link'>
                         <HeaderNav.Icon />
                         返回
                     </HeaderNav.Buttons>

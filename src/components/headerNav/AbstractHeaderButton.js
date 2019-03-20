@@ -8,14 +8,17 @@ const propTypes = {
      * 按钮方向
      * @default left
      * */
-    direction: PropTypes.string,
+    direction: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.bool,
+    ]),
 };
 const defaultProps = {
     direction: 'left',
 };
 
-const AbstractHeaderButton = ({className,direction,...props}) => {
-    return (<Button {...props} className={classNames(className,`pull-${direction}`)}></Button>);
+const AbstractHeaderButton = ({className, direction, ...props}) => {
+    return (<Button {...props} className={classNames(className, direction && `pull-${direction}`)}></Button>);
 }
 AbstractHeaderButton.propTypes = propTypes;
 AbstractHeaderButton.defaultProps = defaultProps;

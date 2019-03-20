@@ -15,7 +15,8 @@ const defaultProps = {
     as: 'a',
     href: '#',
     isVariant: false,
-    fill: false
+    fill: false,
+    direction: false,
 };
 const HeaderNavIcon = ({iconType, ...props}) => {
     const classes = classNames(

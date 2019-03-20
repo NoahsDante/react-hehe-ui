@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -17,17 +16,16 @@ const propTypes = {
      * 按钮状态
      *  @default light
      * */
-    variant:PropTypes.string,
+    variant: PropTypes.string,
 };
 const defaultProps = {
     fill: false,
-    isVariant:false,
-    variant:'light',
+    variant: 'light',
 };
-const HeaderNavButton = ({ ...props}) => {
+const HeaderNavButton = ({...props}) => {
     return (
         <AbstractHeaderButton {...props}/>
-        );
+    );
 };
 
 HeaderNavButton.displayName = 'HeaderNavButton';
