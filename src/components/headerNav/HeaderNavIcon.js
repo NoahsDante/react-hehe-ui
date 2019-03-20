@@ -1,20 +1,28 @@
 import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import AbstractHeaderButton from './AbstractHeaderButton'
 
 import '../style/headerBar.less'
 
 
 const propTypes = {
-    className:PropTypes.string
+    iconType: PropTypes.string
 };
 const defaultProps = {
+    bsPrefix: 'icon',
+    iconType: 'left',
+    as: 'a',
+    href: '#',
+    isVariant: false,
+    fill: false
 };
-const HeaderNavIcon =({...props}) => {
+const HeaderNavIcon = ({iconType, ...props}) => {
+    const classes = classNames(
+        `icon-${iconType}`
+    );
     return (
-        <AbstractHeaderButton {...props} bsPrefix={'icon icon-left'} as='a' href={'#'}/>
+        <AbstractHeaderButton {...props} className={classes}/>
     );
 };
 

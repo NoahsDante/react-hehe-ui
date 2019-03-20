@@ -102,7 +102,10 @@ module.exports = function(webpackEnv) {
         },
       },
       {
-        loader: require.resolve('less-loader') // compiles Less to CSS 自定义添加
+        loader: require.resolve('less-loader'), // compiles Less to CSS 自定义添加
+        options:{
+          javascriptEnabled: true
+        }
       },
       {
         loader: 'sass-resources-loader',

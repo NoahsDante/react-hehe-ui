@@ -19,6 +19,10 @@ const propTypes = {
      * */
     variant: PropTypes.string,
     /**
+     *  @default true
+     * */
+    isVariant: PropTypes.bool,
+    /**
      *  bg
      * */
     size: PropTypes.string,
@@ -56,18 +60,19 @@ const defaultProps = {
     bsPrefix: 'button',
     variant: 'dark',
     type: 'button',
+    isVariant: true,
     fill: true,
     round: false,
     disabled: false,
     active: false
 };
 const Button = React.forwardRef(
-    ({className, bsPrefix, variant, size, block, active, type, as, fill, round, ...props}, ref) => {
+    ({className, bsPrefix, variant, isVariant, size, block, active, type, as, fill, round, ...props}, ref) => {
         const classes = classNames(
             bsPrefix,
             round && 'button-round',
             fill && 'button-fill',
-            `button-${variant}`,
+            isVariant && `button-${variant}`,
             size && `button-${size}`,
             block && 'button-block',
             active && 'active',

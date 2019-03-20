@@ -12,7 +12,7 @@ class App extends Component {
         return (
             <div className="App">
                 <HeaderNav>
-                    <HeaderNav.Icon/>
+                    <HeaderNav.Icon direction='right'/>
                 </HeaderNav>
                 <header className="App-header">
                     <ToggleButtonGroup>
