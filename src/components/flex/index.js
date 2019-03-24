@@ -7,9 +7,9 @@ const Flex = React.forwardRef(({...props},ref) => {
 });
 Flex.propTypes = {
 
-}
+};
 
 Flex.defaultProps = {
 
-}
+};
 export default Flex
