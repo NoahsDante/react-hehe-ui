@@ -48,7 +48,7 @@ const Flex = React.forwardRef((
     });
 
 
-    return (<div {...props} className={wrapCls} style={style} ref={ref}>dddd</div>);
+    return (<div {...props} className={wrapCls} style={style} ref={ref}>{children}</div>);
 });
 Flex.propTypes = {};
 
