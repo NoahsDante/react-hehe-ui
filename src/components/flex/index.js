@@ -2,6 +2,8 @@ import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import FlexItem from './FlexItem';
+
 const Flex = React.forwardRef((
   {
       direction,
@@ -55,6 +57,6 @@ Flex.propTypes = {};
 Flex.defaultProps = {
     prefixCls: 'hehe-flexbox',
     align: 'center'
-
 };
+Flex.Item = FlexItem;
 export default Flex

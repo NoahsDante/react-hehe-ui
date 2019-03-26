@@ -1,5 +1,6 @@
 import ContentMain from './contentMain';
 
+import Flex from './flex';
 
 import HeaderNav from './headerNav/HeaderNav';
 
@@ -9,6 +10,7 @@ import ToggleButtonGroup from './buttons/toggleButtonGroup';
 
 export {
     ContentMain,
+    Flex,
     HeaderNav,
     Button,
     ToggleButtonGroup
