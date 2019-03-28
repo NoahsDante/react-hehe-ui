@@ -12,7 +12,7 @@ const FlexItem = React.forwardRef((
     return (<div {...props} className={wrapCls} ref={ref}></div>);
 });
 FlexItem.propTypes = {
-
+    prefixCls:PropTypes.string
 };
 FlexItem.defaultProps = {
     prefixCls:'hehe-flexbox',

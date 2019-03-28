@@ -4,6 +4,14 @@ import PropTypes from 'prop-types';
 
 import FlexItem from './FlexItem';
 
+const propTypes = {
+    direction:PropTypes.oneOf(['row','row-reverse','column','column-reverse']),
+    wrap:PropTypes.oneOf(['nowrap','wrap','wrap-reverse']),
+    justify:PropTypes.oneOf(['start','end','center','between','around']),
+    align:PropTypes.oneOf(['start','center','end','baseline','stretch']),
+    alignContent:PropTypes.oneOf(['start','end','center','between','around','stretch']),
+};
+
 const Flex = React.forwardRef((
   {
       direction,
@@ -52,7 +60,7 @@ const Flex = React.forwardRef((
 
     return (<div {...props} className={wrapCls} style={style} ref={ref}>{children}</div>);
 });
-Flex.propTypes = {};
+Flex.propTypes = propTypes;
 
 Flex.defaultProps = {
     prefixCls: 'hehe-flexbox',
