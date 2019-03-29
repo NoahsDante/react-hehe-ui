@@ -2,6 +2,8 @@ import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import '../style/flex.less';
+
 import FlexItem from './FlexItem';
 
 const propTypes = {
