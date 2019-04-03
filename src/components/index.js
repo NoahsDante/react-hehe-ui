@@ -5,6 +5,7 @@ import ContentMain from './contentMain';
 import HeaderNav from './headerNav/HeaderNav';
 
 import Drawer from './drawer';
+import Popover from './popover';
 
 import Checkbox from './checkbox';
 
@@ -18,6 +19,7 @@ export {
     ContentMain,
     HeaderNav,
     Drawer,
+    Popover,
     Checkbox,
     Button,
     ToggleButtonGroup
