@@ -15,7 +15,7 @@ class App extends Component {
                     <HeaderNav>
                         <HeaderNav.Buttons  variant='link'>
                             <HeaderNav.Icon />
-                            返回
+                            返回dd
                         </HeaderNav.Buttons>
                     </HeaderNav>
                     <header className="App-header">

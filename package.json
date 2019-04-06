@@ -45,6 +45,7 @@
     "react-dev-utils": "^8.0.0",
     "react-dom": "^16.8.4",
     "resolve": "1.10.0",
+    "rmc-tabs": "^1.2.29",
     "sass-loader": "7.1.0",
     "sass-resources-loader": "^2.0.0",
     "style-loader": "0.23.1",
