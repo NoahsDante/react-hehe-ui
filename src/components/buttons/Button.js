@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SafeAnchor from '../other/SafeAnchor'
 
-import '../style/buttons.less'
+import './style/buttons.less'
 
 const propTypes = {
     /**

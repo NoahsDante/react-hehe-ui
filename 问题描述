@@ -1,0 +1,13 @@
+## 全局引入less 变量
+使用**sass-resources-loader**
+```
+{
+    loader: 'sass-resources-loader',
+    options: {
+      resources: [
+          path.resolve(__dirname, '../src/components/styles/**/*.less'),
+      ]
+    }
+}
+
+```

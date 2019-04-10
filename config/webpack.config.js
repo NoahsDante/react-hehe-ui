@@ -111,7 +111,7 @@ module.exports = function(webpackEnv) {
         loader: 'sass-resources-loader',
         options: {
           resources: [
-            path.resolve(__dirname, '../src/components/style/index.less'),
+              path.resolve(__dirname, '../src/components/styles/**/*.less'),
           ]
         }
       }
@@ -282,9 +282,7 @@ module.exports = function(webpackEnv) {
 
         $components:path.resolve(__dirname, '../src/components'),
 
-        $imgage:path.resolve(__dirname, '../src/static/image'),
-        $style:path.resolve(__dirname, '../src/static/style'),
-
+        $images:path.resolve(__dirname, '../src/static/image'),
 
       },
       plugins: [
