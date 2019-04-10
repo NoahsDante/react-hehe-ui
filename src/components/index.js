@@ -1,11 +1,9 @@
 import WingBlank from './wingBlank';
 
+import List from './list';
 
-
-
-import Button from './buttons/Button';
 
 export {
     WingBlank,
-    Button,
+    List
 };

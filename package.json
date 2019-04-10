@@ -75,7 +75,8 @@
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "prop-types": "^15.7.2",
-    "react-router-dom": "^5.0.0"
+    "react-router-dom": "^5.0.0",
+    "rmc-feedback": "^2.0.0"
   },
   "jest": {
     "collectCoverageFrom": [
