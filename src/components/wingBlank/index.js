@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import '../style/wingBlank.less';
+import './style/wingBlank.less';
 
 
 const propTypes = {
@@ -11,6 +11,7 @@ const propTypes = {
      * */
     prefixCls: PropTypes.string,
     /**
+     * 两翼留白的间距
      * @default lg
      * */
     size: PropTypes.string

@@ -1,19 +1,9 @@
-import React, {Component} from 'react';
-
-import {Button} from '$components'
-
+import React from 'react';
 import './static/style/App.less';
 
-class App extends Component {
-    render() {
-        this.handleClick = () => {
-            console.log(this);
-        }
-        return (
-            <div className="App">
-            </div>
-        );
-    }
-}
+import AppRouter from './pages';
+
+const App = () => (<AppRouter/>);
+
 
 export default App;
