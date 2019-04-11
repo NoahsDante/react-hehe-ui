@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import ListItem from './ListItem';
+import ListBrief from './ListBrief'
 import './style/list.less'
 
 const propTypes = {
@@ -44,4 +45,5 @@ const List = React.forwardRef(({
 List.propTypes = propTypes;
 List.defaultProps = defaultProps;
 List.Item = ListItem;
+List.Brief = ListBrief;
 export default List

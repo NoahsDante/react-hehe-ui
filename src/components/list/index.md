@@ -34,9 +34,7 @@ subtitle: 列表
 | error    | 报错样式,右侧文字颜色变成橙色 | Boolean  | `false`  |
 | multipleLine    | 多行 | Boolean  | `false`  |
 | wrap    | 是否换行，默认情况下，文字超长会被隐藏， | Boolean  | `false`  |
-| activeStyle    | 自定义active的样式 | Object  |   |
-| platform  |  设定组件的平台特有样式, 可选值为 `android`, `ios`， 默认为 `cross`， 即组件会自动检测设备 UA 应用不同平台的样式    | String | `'cross'`|
 
-### List.Item.Brief
+### List.Brief
 
 辅助说明

@@ -15,7 +15,11 @@ const propTypes = {
     arrow: PropTypes.oneOf('horizontal', 'vertical', 'vertical-up')
 };
 const defaultProps = {
-    prefixCls: 'hehe-list'
+    prefixCls: 'hehe-list',
+    align: 'middle',
+    error: false,
+    multipleLine: false,
+    wrap: false,
 };
 const ListItem = React.forwardRef(({
                                        prefixCls,
@@ -29,7 +33,6 @@ const ListItem = React.forwardRef(({
                                        children,
                                        extra,
                                        arrow,
-                                       activeStyle,
                                        onClick,
                                        ...props
                                    }, ref) => {
@@ -40,8 +43,7 @@ const ListItem = React.forwardRef(({
         className,
         {
             [`${prefixCls}-item-disabled`]: disabled,
-            [`${prefixCls}-item-`]: error,
-            [`${prefixCls}-item`]: disabled
+            [`${prefixCls}-item-error`]: error,
         },
         align && `${prefixCls}-item-${align}`
     );
@@ -49,17 +51,17 @@ const ListItem = React.forwardRef(({
     const lineCls = classnames(
         `${prefixCls}-line`,
         {
-            [`${prefixCls}-multiple`]: multipleLine,
-            [`${prefixCls}-wrap`]: wrap,
+            [`${prefixCls}-line-multiple`]: multipleLine,
+            [`${prefixCls}-line-wrap`]: wrap,
         }
     );
-
+    console.log(onClick);
     const arrowCls = classnames(
         `${prefixCls}-arrow`,
         arrow && `${prefixCls}-arrow-${arrow}`,
     );
     const content = (
-        <div className={wrapCls} ref={ref} {...props}>
+        <div className={wrapCls} ref={ref} onClick={onClick} {...props}>
             {thumb ? (
                 <div className={`${prefixCls}-thumb`}>
                     {typeof thumb === 'string' ? <img src={thumb}/> : thumb}
@@ -89,7 +91,6 @@ const ListItem = React.forwardRef(({
         <TouchFeedback
             {...touchProps}
             disabled={disabled || !onClick}
-            activeStyle={activeStyle}
             activeClassName={`${prefixCls}-item-active`}
         >
             {content}
