@@ -45,7 +45,8 @@ const FlexView = () => {
                 <Block/>
             </Flex>
             <div style={subTitle}>
-                justify  | 子元素在主轴上的对齐方式，可选`start`,`end`,`center`,`between`,`around`    | String   | `start` |
+                justify | 子元素在主轴上的对齐方式，可选`start`,`end`,`center`,`between`,`around` | String |
+                `start` |
             </div>
             <Flex justify='between'>
                 <Block/>
@@ -53,9 +54,10 @@ const FlexView = () => {
                 <Block/>
             </Flex>
             <div style={subTitle}>
-                align    | 子元素在交叉轴上的对齐方式，可选`start`,`center`,`end`,`baseline`,`stretch`
+                align | 子元素在交叉轴上的对齐方式，可选`start`,`center`,`end`,`baseline`,`stretch`
             </div>
-            <Flex wrap='wrap' align='center' style={{'height':'150px',backgroundColor:'#09bfff'}}>
+            <Flex wrap='wrap' align='center'
+                  style={{'height': '150px', backgroundColor: '#09bfff'}}>
                 <Block/>
                 <Block/>
                 <Block/>
@@ -63,9 +65,11 @@ const FlexView = () => {
                 <Block/>
             </Flex>
             <div style={subTitle}>
-                alignContent | 有多根轴线时的对齐方式，可选`start`,`end`,`center`,`between`,`around`,`stretch`    | String  | `stretch` |
+                alignContent | 有多根轴线时的对齐方式，可选`start`,`end`,`center`,`between`,`around`,`stretch` |
+                String | `stretch` |
             </div>
-            <Flex wrap='wrap' alignContent='center' style={{'height':'150px',backgroundColor:'#09bfff'}}>
+            <Flex wrap='wrap' alignContent='center'
+                  style={{'height': '150px', backgroundColor: '#09bfff'}}>
                 <Block/>
                 <Block/>
                 <Block/>

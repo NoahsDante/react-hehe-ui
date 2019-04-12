@@ -16,7 +16,8 @@ const ListView = () => {
             </List>
             <List
                 renderHeader='arrow      | 箭头方向(右,上,下), 可选`horizontal`,`up`,`down`,`empty`，如果是`empty`则存在对应的dom,但是不显示   | String |   无  |'>
-                <List.Item arrow='horizontal' onClick={() => {}}>
+                <List.Item arrow='horizontal' onClick={() => {
+                }}>
                     箭头
                 </List.Item>
             </List>

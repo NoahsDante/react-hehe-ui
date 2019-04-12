@@ -1,5 +1,5 @@
 import React from 'react';
-import {WingBlank,Flex} from 'hehe-mobile';
+import {Flex, WingBlank} from 'hehe-mobile';
 
 const subTitle = {
     'color': '#888',
@@ -20,7 +20,7 @@ const WingBlankView = () => {
     return (
         <>
             <div style={subTitle}>
-                size    | 两翼留白的间距，可选`sm`,`md`,`lg`  | string |  `lg`  |
+                size | 两翼留白的间距，可选`sm`,`md`,`lg` | string | `lg` |
             </div>
             <WingBlank size='sm'>
                 <Flex>
@@ -32,7 +32,7 @@ const WingBlankView = () => {
                 </Flex>
             </WingBlank>
             <div style={subTitle}>
-                size    md
+                size md
             </div>
             <WingBlank size='md'>
                 <Flex>
@@ -44,7 +44,7 @@ const WingBlankView = () => {
                 </Flex>
             </WingBlank>
             <div style={subTitle}>
-                size    lg
+                size lg
             </div>
             <WingBlank size='lg'>
                 <Flex>
