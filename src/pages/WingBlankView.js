@@ -22,7 +22,31 @@ const WingBlankView = () => {
             <div style={subTitle}>
                 size    | 两翼留白的间距，可选`sm`,`md`,`lg`  | string |  `lg`  |
             </div>
-            <WingBlank size='column'>
+            <WingBlank size='sm'>
+                <Flex>
+                    <Block/>
+                    <Block/>
+                    <Block/>
+                    <Block/>
+                    <Block/>
+                </Flex>
+            </WingBlank>
+            <div style={subTitle}>
+                size    md
+            </div>
+            <WingBlank size='md'>
+                <Flex>
+                    <Block/>
+                    <Block/>
+                    <Block/>
+                    <Block/>
+                    <Block/>
+                </Flex>
+            </WingBlank>
+            <div style={subTitle}>
+                size    lg
+            </div>
+            <WingBlank size='lg'>
                 <Flex>
                     <Block/>
                     <Block/>

@@ -7,7 +7,7 @@ import './style/whiteSpace.less';
 
 const propTypes = {
     /**
-     * @default hehe-wingblank
+     * @default hehe-whitespace
      * */
     prefixCls: PropTypes.string,
     /**
@@ -34,7 +34,7 @@ const WhiteSpace = React.forwardRef((
 WhiteSpace.propTypes = propTypes;
 
 WhiteSpace.defaultProps = {
-    prefixCls: 'hehe-wingblank',
+    prefixCls: 'hehe-whitespace',
     size: 'md',
 };
 
