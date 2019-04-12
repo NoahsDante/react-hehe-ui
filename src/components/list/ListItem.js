@@ -55,7 +55,6 @@ const ListItem = React.forwardRef(({
             [`${prefixCls}-line-wrap`]: wrap,
         }
     );
-    console.log(onClick);
     const arrowCls = classnames(
         `${prefixCls}-arrow`,
         arrow && `${prefixCls}-arrow-${arrow}`,

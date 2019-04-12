@@ -42,6 +42,7 @@ const ListView = () => {
             </List>
             <List renderHeader='onClick    | 点击事件的回调函数 | (): void |  无  |'>
                 <List.Item onClick={() => {
+                    alert('s')
                 }}>
                     你过来点我呀
                 </List.Item>
