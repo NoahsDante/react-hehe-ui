@@ -14,17 +14,15 @@ const Block = (poops) => {
 const WhiteSpaceView = () => {
     return (
         <>
-            <Block>
-            </Block>
+            <Block/>
             <WhiteSpace size='sm'/>
-            <Block>
-            </Block>
+            <Block/>
             <WhiteSpace size='md'/>
-            <Block>
-            </Block>
+            <Block/>
             <WhiteSpace size='lg'/>
-            <Block>
-            </Block>
+            <Block/>
+            <WhiteSpace size='xl'/>
+            <Block/>
         </>
 
     );
