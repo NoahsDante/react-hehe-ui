@@ -21,19 +21,19 @@ const RouteNav = () => {
             <Link to='/flex'>
                 <List.Item arrow='horizontal' onClick={() => {
                 }}>
-                    Flex
+                    Flex 布局
                 </List.Item>
             </Link>
             <Link to='/wing_blank'>
                 <List.Item arrow='horizontal' onClick={() => {
                 }}>
-                    WingBlank
+                    WingBlank 两翼留白
                 </List.Item>
             </Link>
             <Link to='/white_space'>
                 <List.Item arrow='horizontal' onClick={() => {
                 }}>
-                    WhiteSpace
+                    WhiteSpace 上下留白
                 </List.Item>
             </Link>
         </List>
@@ -43,7 +43,7 @@ const RouteNav = () => {
             <Link to='/list'>
                 <List.Item arrow='horizontal' onClick={() => {
                 }}>
-                    list
+                    list 列表
                 </List.Item>
             </Link>
         </List>
@@ -53,7 +53,7 @@ const RouteNav = () => {
             <Link to='/button'>
                 <List.Item arrow='horizontal' onClick={() => {
                 }}>
-                    button
+                    button 按钮
                 </List.Item>
             </Link>
         </List>
