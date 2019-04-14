@@ -2,9 +2,9 @@ import React from 'react';
 import {Flex, List} from 'hehe-mobile';
 
 const subTitle = {
-    'color': '#888',
-    'font-size': '14px',
-    'padding': '30px 0 18px 0'
+    color: '#888',
+    fontSize: '14px',
+    padding: '30px 0 18px 0'
 };
 const flexItem = {
     width: '100px',

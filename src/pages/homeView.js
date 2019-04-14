@@ -2,12 +2,18 @@ import React from 'react';
 import {Link, Route} from 'react-router-dom';
 import {List, WingBlank} from 'hehe-mobile';
 
+import WrapView from './WrapView';
+
 import FlexView from './FlexView';
 import WingBlankView from './WingBlankView';
 import WhiteSpaceView from './WhiteSpaceView'
 
-
 import ListView from './ListView';
+
+import ButtonView from './ButtonView'
+
+
+
 
 const RouteNav = () => {
     const LayoutList = (
@@ -42,12 +48,30 @@ const RouteNav = () => {
             </Link>
         </List>
     );
+    const DataEntryList = (
+        <List renderHeader={'Data-Entry'}>
+            <Link to='/button'>
+                <List.Item arrow='horizontal' onClick={() => {
+                }}>
+                    button
+                </List.Item>
+            </Link>
+        </List>
+    );
     const content = (
         <Route path='/' exact render={() => {
+            const contentView = () =>(
+                <>
+                    {LayoutList}
+                    {DataDisplayList}
+                    {DataEntryList}
+                </>
+            )
             return (
                 <>
                     {LayoutList}
                     {DataDisplayList}
+                    {DataEntryList}
                 </>
             );
         }}/>
@@ -57,21 +81,29 @@ const RouteNav = () => {
 const RouteContent = () => {
     const LayoutContent = (
         <>
-            <Route path='/flex' render={() => {
-                return (<FlexView/>);
+            <Route path='/flex' render={(props ) => {
+                console.log(props);
+                return (<WrapView title='Flex' component={FlexView}/>);
             }}/>
             <Route path='/wing_blank' render={() => {
-                return (<WingBlankView/>);
+                return (<WrapView title='WingBlank' component={WingBlankView}/>);
             }}/>
             <Route path='/white_space' render={() => {
-                return (<WhiteSpaceView/>);
+                return (<WrapView title='WhiteSpace' component={WhiteSpaceView}/>);
             }}/>
         </>
     );
     const DataDisplayContent = (
         <>
             <Route path='/list' render={() => {
-                return (<ListView/>);
+                return (<WrapView title='List' component={ListView}/>);
+            }}/>
+        </>
+    );
+    const DataEntryContent = (
+        <>
+            <Route path='/button' render={() => {
+                return (<WrapView title='Button' component={ButtonView}/>);
             }}/>
         </>
     );
@@ -79,6 +111,7 @@ const RouteContent = () => {
         <>
             {LayoutContent}
             {DataDisplayContent}
+            {DataEntryContent}
         </>
     );
 };
