@@ -2,6 +2,8 @@ import classnames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import './style/badge.less'
+
 const propTypes = {
     size: PropTypes.string,
     text: PropTypes.string,
@@ -20,21 +22,49 @@ const defaultProps = {
     hot: false
 };
 const Badge = React.forwardRef(
-    ({
-         prefixCls,
-         ...props
-     }
-        , ref) => {
+  ({
+       prefixCls,
+       className,
+       children,
+       dot,
+       size,
+       text,
+       corner,
+       hot,
+       overflowCount,
+       ...props
+   }
+    , ref) => {
+      text = typeof text === 'number' && (text > overflowCount) ? `${overflowCount}+` : text;
+      if (dot) {
+          text = '';
+      }
+      const scrollNumberCls = classnames({
+          [`${prefixCls}-dot`]: dot,
+          [`${prefixCls}-dot-large`]: dot && size === 'large',
+          [`${prefixCls}-text`]: !dot && !corner,
+          [`${prefixCls}-corner`]: corner,
+          [`${prefixCls}-corner-large`]: corner && size === 'large',
+      });
+      const wrapCls = classnames(prefixCls, className, {
+          [`${prefixCls}-not-a-wrapper`]: !children,
+          [`${prefixCls}-corner-wrapper`]: corner,
+          [`${prefixCls}-hot`]: !!hot,
+          [`${prefixCls}-corner-wrapper-large`]: corner && size === 'large',
+      });
 
-        const wrapCls = classnames(prefixCls);
 
-
-        return (
-            <span className={wrapCls} {...props} ref={ref}>
-
-            </span>
-        );
-    });
+      return (
+        <span className={wrapCls} {...props} ref={ref}>
+            {children}
+            {(text || dot) && (
+              <sup className={scrollNumberCls}>
+                  {text}
+              </sup>
+            )}
+        </span>
+      );
+  });
 Badge.propTypes = propTypes;
 Badge.defaultProps = defaultProps;
 export default Badge

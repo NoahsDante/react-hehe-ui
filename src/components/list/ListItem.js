@@ -21,24 +21,25 @@ const defaultProps = {
     multipleLine: false,
     wrap: false,
 };
-const ListItem = React.forwardRef(({
-                                       prefixCls,
-                                       className,
-                                       error,
-                                       disabled,
-                                       align,
-                                       multipleLine,
-                                       wrap,
-                                       thumb,
-                                       children,
-                                       extra,
-                                       arrow,
-                                       onClick,
-                                       ...props
-                                   }, ref) => {
+const ListItem = React.forwardRef(
+  ({
+       prefixCls,
+       className,
+       error,
+       disabled,
+       align,
+       multipleLine,
+       wrap,
+       thumb,
+       children,
+       extra,
+       arrow,
+       onClick,
+       ...props
+   }, ref) => {
 
 
-    const wrapCls = classnames(
+      const wrapCls = classnames(
         `${prefixCls}-item`,
         className,
         {
@@ -46,56 +47,56 @@ const ListItem = React.forwardRef(({
             [`${prefixCls}-item-error`]: error,
         },
         align && `${prefixCls}-item-${align}`
-    );
+      );
 
-    const lineCls = classnames(
+      const lineCls = classnames(
         `${prefixCls}-line`,
         {
             [`${prefixCls}-line-multiple`]: multipleLine,
             [`${prefixCls}-line-wrap`]: wrap,
         }
-    );
-    const arrowCls = classnames(
+      );
+      const arrowCls = classnames(
         `${prefixCls}-arrow`,
         arrow && `${prefixCls}-arrow-${arrow}`,
-    );
-    const content = (
+      );
+      const content = (
         <div className={wrapCls} ref={ref} onClick={onClick} {...props}>
             {thumb ? (
-                <div className={`${prefixCls}-thumb`}>
-                    {typeof thumb === 'string' ? <img src={thumb}/> : thumb}
-                </div>
+              <div className={`${prefixCls}-thumb`}>
+                  {typeof thumb === 'string' ? <img src={thumb}/> : thumb}
+              </div>
             ) : null}
             <div className={lineCls}>
                 {children && (
-                    <div className={`${prefixCls}-content`}>{children}</div>
+                  <div className={`${prefixCls}-content`}>{children}</div>
                 )}
                 {extra && (
-                    <div className={`${prefixCls}-extra`}>
-                        {extra}
-                    </div>
+                  <div className={`${prefixCls}-extra`}>
+                      {extra}
+                  </div>
                 )}
                 {arrow && (<div className={arrowCls}></div>)}
             </div>
         </div>
-    );
-    const touchProps = {};
-    Object.keys(props).forEach(key => {
-        if (/onTouch/i.test(key)) {
-            touchProps[key] = props[key];
-            delete props[key];
-        }
-    });
-    return (
+      );
+      const touchProps = {};
+      Object.keys(props).forEach(key => {
+          if (/onTouch/i.test(key)) {
+              touchProps[key] = props[key];
+              delete props[key];
+          }
+      });
+      return (
         <TouchFeedback
-            {...touchProps}
-            disabled={disabled || !onClick}
-            activeClassName={`${prefixCls}-item-active`}
+          {...touchProps}
+          disabled={disabled || !onClick}
+          activeClassName={`${prefixCls}-item-active`}
         >
             {content}
         </TouchFeedback>
-    );
-});
+      );
+  });
 ListItem.propTypes = propTypes;
 ListItem.defaultProps = defaultProps;
 export default ListItem
