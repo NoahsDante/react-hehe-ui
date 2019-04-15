@@ -60,13 +60,6 @@ const RouteNav = () => {
     );
     const content = (
         <Route path='/' exact render={() => {
-            const contentView = () =>(
-                <>
-                    {LayoutList}
-                    {DataDisplayList}
-                    {DataEntryList}
-                </>
-            )
             return (
                 <>
                     {LayoutList}

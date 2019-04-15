@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import classnames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -16,21 +16,22 @@ const propTypes = {
     size: PropTypes.string
 };
 
-const WhiteSpace = React.forwardRef((
-  {
-      className,
-      size,
-      prefixCls,
-      style,
-      onClick,
-      ...props
-  }
-  , ref) => {
+const WhiteSpace = React.forwardRef(
+    ({
+         className,
+         size,
+         prefixCls,
+         style,
+         onClick,
+         ...props
+     }
+        , ref) => {
 
-    const wrapCls = classNames(prefixCls, `${prefixCls}-${size}`, className);
+        const wrapCls = classnames(prefixCls, `${prefixCls}-${size}`, className);
 
-    return (<div {...props} className={wrapCls} style={style} ref={ref} onClick={onClick}></div>);
-});
+        return (
+            <div {...props} className={wrapCls} style={style} ref={ref} onClick={onClick}></div>);
+    });
 WhiteSpace.propTypes = propTypes;
 
 WhiteSpace.defaultProps = {

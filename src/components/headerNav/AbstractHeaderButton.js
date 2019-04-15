@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from '../buttons/Button';
+import Button from '../buttons/index';
 
 const propTypes = {
     /**

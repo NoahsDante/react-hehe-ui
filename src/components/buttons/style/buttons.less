@@ -1,205 +1,109 @@
-//Buttons
+@buttonPrefixCls: hehe-button;
 
-.button {
-  @btn-height: 1.35rem;
-  @btn-big-height: 2.4rem;
-  border: 1px solid @color-primary;
-  color: @color-primary;
-  text-decoration: none;
-  text-align: center;
+.@{buttonPrefixCls} {
   display: block;
-  border-radius: 0.25rem;
-  line-height: (@btn-height - 0.1rem);
-  box-sizing: border-box;
+  outline: 0 none;
   -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  appearance: none;
-  background: none;
-  padding: 0 0.5rem;
-  margin: 0;
-  height: @btn-height;
+  box-sizing: border-box;
+  padding: 0;
+  text-align: center;
+  font-size: @button-font-size;
+  height: @button-height;
+  line-height: @button-height;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
   white-space: nowrap;
-  position: relative;
-  text-overflow:ellipsis;
-  font-size: 0.7rem;
-  font-family: inherit;
-  cursor: pointer;
-  input[type="submit"]&, input[type="button"]&{
-    width: 100%;
+
+  // default
+  color: @color-text-base;
+  background-color: @fill-base;
+
+  .hairline('all', @border-color-base, @radius-md);
+
+  &-borderfix {
+    &:before {
+      transform: scale(0.49)!important;
+    }
   }
 
-  &:active {
-    color: @color-primary-active;
-    border-color: @color-primary-active;
+  &&-active {
+    background-color: @fill-tap;
   }
-  &.button-round {
-    border-radius: (@btn-height - 0.1rem);
+  &&-disabled {
+    color: fade(@color-text-base, 30%);
+    opacity: 0.6;
   }
-  &.active {
-    &, &:active {
-      color: @color-primary-active;
-      border-color: @color-primary-active;
+
+  &-primary {
+    color: @color-text-base-inverse;
+    background-color: @primary-button-fill;
+    .hairline('all', @primary-button-fill, @radius-md);
+
+    &.@{buttonPrefixCls}-active {
+      color: fade(@color-text-base-inverse, 30%);
+      background-color: @primary-button-fill-tap;
+    }
+    &.@{buttonPrefixCls}-disabled {
+      color: fade(@color-text-base-inverse, 60%);
+      opacity: 0.4;
     }
   }
-  &.button-block {
-    display: block;
-    width: 100%;
-  }
-  &.button-big {
-    font-size: 0.85rem;
-    height: @btn-big-height;
-    line-height: (@btn-big-height - 0.1rem);
-  }
-  &.button-fill {
-    color:#fff;
-    background: @color-primary;
-    border: none;
-    line-height: @btn-height;
-    &.active, &:active {
-      background: @color-primary-active;
-    }
-    &.button-big {
-      line-height: @btn-big-height;
-    }
-  }
-  .button-link {
-    padding-top: 0.3rem;
-    padding-bottom: 0.3rem;
-    color: @color-primary;
+
+  &-ghost {
+    color: @ghost-button-color;
     background-color: transparent;
-    border: 0;
-  }
-  i.icon {
-    &:first-child {
-      margin-right: 0.5rem;
-    }
-    &:last-child {
-      margin-left: 0.5rem;
-    }
-    &:first-child:last-child {
-      margin-left: 0;
-      margin-right: 0;
-    }
-  }
-}
+    .hairline('all', @ghost-button-color, @radius-md);
 
-.btn-variant(@color, @color-active) {
-  border-color: @color;
-  color: @color;
-  &:active {
-    border-color: @color-active;
-    color: @color-active;
-  }
-  &.button-fill {
-    color: white;
-    background-color: @color;
-    &:active {
-      background-color: @color-active;
+    &.@{buttonPrefixCls}-active {
+      color: @ghost-button-fill-tap;
+      background-color: transparent;
+      .hairline('all', @ghost-button-fill-tap, @radius-md);
     }
-  }
-}
-.button-themes() {
-  &.button-light {
-    .btn-variant(@color-text-gray-light, @color-primary-active);
-    color: @color-text-secondary;
-  }
-  &.button-dark {
-    .btn-variant(#6e727b, @color-primary-active);
-    color: @color-text-secondary;
-  }
-  &.button-success {
-    .btn-variant(@color-success, @color-success-active);
-  }
-  &.button-danger {
-    .btn-variant(@color-danger, @color-danger-active);
-  }
-  &.button-warning {
-    .btn-variant(@color-warning, @color-warning-active);
-  }
-}
-.button-themes();
-
-.button {
-  &,
-  &.button-primary,
-  &.button-success,
-  &.button-danger,
-  &.button-warning {
-    &.disabled {
-      .btn-variant(#c8c9cb, #c8c9cb);
-      cursor: not-allowed;
-    }
-  }
-}
-
-.buttons-row,
-.buttons-tab {
-  .align-self(center);
-  .flexbox();
-  .flex-wrap(nowrap);
-}
-
-.buttons-row {
-  .button {
-    border-radius: 0 0 0 0;
-    margin-left: -1px;
-    width: 100%;
-    -webkit-box-flex:1;
-    -ms-flex:1;
-    border-color: @color-primary;
-    color: @color-primary;
-    &.active {
-      background-color: @color-primary;
-      color: white;
-      z-index: 90;
-    }
-    &:active {
-    }
-  }
-  .button:first-child {
-    border-radius: 0.25rem 0 0 0.25rem;
-    margin-left: 0;
-    border-left-width: 1px;
-    border-left-style: solid;
-  }
-  .button:last-child {
-    border-radius: 0 0.25rem 0.25rem 0;
-  }
-  .button.button-round:first-child {
-    border-radius: 1.35rem 0 0 1.35rem;
-  }
-  .button.button-round:last-child {
-    border-radius: 0 1.35rem 1.35rem 0;
-  }
-}
-
-.buttons-tab {
-  background: white;
-  position: relative;
-  .hairline(bottom, #d0d0d0);
-  .button {
-    color: @color-text-secondary;
-    font-size: 0.8rem;
-    width: 100%;
-    height: 2rem;
-    line-height: 2rem;
-    -webkit-box-flex:1;
-    -ms-flex:1;
-    border: 0;
-    border-bottom: 2px solid transparent;
-    border-radius: 0;
-
-    &.active {
-      color: @color-primary;
-      border-color: @color-primary;
-      z-index: 100;
+    &.@{buttonPrefixCls}-disabled {
+      color: fade(@color-text-base, 10%);
+      .hairline('all', fade(@color-text-base, 10%), @radius-md);
+      opacity: 1; // override default opacity: 0.6
     }
   }
 
-}
-.buttons-fixed{
-  position: fixed;
-  z-index: 99;
-  width: 100%;
+  &-warning {
+    color: @color-text-base-inverse;
+    background-color: @warning-button-fill;
+
+    &.@{buttonPrefixCls}-active {
+      color: fade(@color-text-base-inverse, 30%);
+      background-color: @warning-button-fill-tap;
+    }
+    &.@{buttonPrefixCls}-disabled {
+      color: fade(@color-text-base-inverse, 60%);
+      opacity: 0.4;
+    }
+  }
+
+  &-inline {
+    display: inline-block;
+    padding: 0 @h-spacing-lg;
+    &.@{buttonPrefixCls}-icon {
+      display: inline-flex;
+    }
+  }
+
+  &-small {
+    font-size: @button-font-size-sm;
+    height: @button-height-sm;
+    line-height: @button-height-sm;
+    padding: 0 @h-spacing-lg;
+  }
+
+  &-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  > .@{buttonPrefixCls}-icon {
+    margin-right: 0.5em;
+  }
 }
