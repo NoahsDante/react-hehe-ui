@@ -6,7 +6,10 @@ import './style/badge.less'
 
 const propTypes = {
     size: PropTypes.string,
-    text: PropTypes.string,
+    text: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number
+    ]),
     corner: PropTypes.bool,
     dot: PropTypes.bool,
     overflowCount: PropTypes.number,
