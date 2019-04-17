@@ -9,7 +9,8 @@ import WingBlankView from './WingBlankView';
 import WhiteSpaceView from './WhiteSpaceView'
 
 import ListView from './ListView';
-import Badge from './BadgeView';
+import BadgeView from './BadgeView';
+import CardView from './CardView';
 
 import ButtonView from './ButtonView'
 
@@ -49,6 +50,12 @@ const RouteNav = () => {
               <List.Item arrow='horizontal' onClick={() => {
               }}>
                   badge 角标
+              </List.Item>
+          </Link>
+          <Link to='/card'>
+              <List.Item arrow='horizontal' onClick={() => {
+              }}>
+                  card 卡片
               </List.Item>
           </Link>
       </List>
@@ -97,7 +104,10 @@ const RouteContent = () => {
               return (<WrapView title='List' component={ListView}/>);
           }}/>
           <Route path='/badge' render={() => {
-              return (<WrapView title='badge' component={Badge}/>);
+              return (<WrapView title='badge' component={BadgeView}/>);
+          }}/>
+          <Route path='/card' render={() => {
+              return (<WrapView title='card' component={CardView}/>);
           }}/>
       </>
     );
