@@ -12,7 +12,8 @@ import ListView from './ListView';
 import BadgeView from './BadgeView';
 import CardView from './CardView';
 
-import ButtonView from './ButtonView'
+import ButtonView from './ButtonView';
+import CheckboxView from './CheckboxView';
 
 
 const RouteNav = () => {
@@ -68,9 +69,15 @@ const RouteNav = () => {
                   button 按钮
               </List.Item>
           </Link>
+          <Link to='/checkbox'>
+              <List.Item arrow='horizontal' onClick={() => {
+              }}>
+                  checkbox 复选框
+              </List.Item>
+          </Link>
       </List>
     );
-    const content = (
+    return (
       <Route path='/' exact render={() => {
           return (
             <>
@@ -81,8 +88,7 @@ const RouteNav = () => {
           );
       }}/>
     );
-    return content;
-}
+};
 const RouteContent = () => {
     const LayoutContent = (
       <>
@@ -116,6 +122,9 @@ const RouteContent = () => {
           <Route path='/button' render={() => {
               return (<WrapView title='Button' component={ButtonView}/>);
           }}/>
+          <Route path='/checkbox' render={() => {
+              return (<WrapView title='checkbox' component={CheckboxView}/>);
+          }}/>
       </>
     );
     return (
@@ -134,7 +143,7 @@ const HomeView = () => {
       </WingBlank>
     );
 
-}
+};
 export default HomeView
 
 

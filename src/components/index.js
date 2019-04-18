@@ -9,7 +9,8 @@ import Badge from './badge';
 import Card from './card';
 
 // Data-Entry
-import Button from './buttons'
+import Button from './buttons';
+import Checkbox from './checkbox';
 
 export {
     Flex,
@@ -18,5 +19,6 @@ export {
     List,
     Badge,
     Card,
-    Button
+    Button,
+    Checkbox
 };
