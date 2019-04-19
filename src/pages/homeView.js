@@ -8,6 +8,8 @@ import FlexView from './FlexView';
 import WingBlankView from './WingBlankView';
 import WhiteSpaceView from './WhiteSpaceView'
 
+import DrawerView from './DrawerView';
+
 import ListView from './ListView';
 import BadgeView from './BadgeView';
 import CardView from './CardView';
@@ -35,6 +37,16 @@ const RouteNav = () => {
               <List.Item arrow='horizontal' onClick={() => {
               }}>
                   WhiteSpace 上下留白
+              </List.Item>
+          </Link>
+      </List>
+    );
+    const NavigationList = (
+      <List renderHeader={'Navigation'}>
+          <Link to='/drawer'>
+              <List.Item arrow='horizontal' onClick={() => {
+              }}>
+                  drawer 抽屉
               </List.Item>
           </Link>
       </List>
@@ -82,6 +94,7 @@ const RouteNav = () => {
           return (
             <>
                 {LayoutList}
+                {NavigationList}
                 {DataDisplayList}
                 {DataEntryList}
             </>
@@ -92,8 +105,7 @@ const RouteNav = () => {
 const RouteContent = () => {
     const LayoutContent = (
       <>
-          <Route path='/flex' render={(props) => {
-              console.log(props);
+          <Route path='/flex' render={() => {
               return (<WrapView title='Flex' component={FlexView}/>);
           }}/>
           <Route path='/wing_blank' render={() => {
@@ -101,6 +113,13 @@ const RouteContent = () => {
           }}/>
           <Route path='/white_space' render={() => {
               return (<WrapView title='WhiteSpace' component={WhiteSpaceView}/>);
+          }}/>
+      </>
+    );
+    const NavigationContent = (
+      <>
+          <Route path='/drawer' render={() => {
+              return (<WrapView title='Drawer' component={DrawerView}/>);
           }}/>
       </>
     );
@@ -130,6 +149,7 @@ const RouteContent = () => {
     return (
       <>
           {LayoutContent}
+          {NavigationContent}
           {DataDisplayContent}
           {DataEntryContent}
       </>

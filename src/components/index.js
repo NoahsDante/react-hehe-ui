@@ -3,6 +3,9 @@ import Flex from './flex';
 import WingBlank from './wingBlank';
 import WhiteSpace from './whiteSpace';
 
+// Navigation
+import Drawer from './drawer';
+
 // Data-Display
 import List from './list';
 import Badge from './badge';
@@ -16,6 +19,7 @@ export {
     Flex,
     WingBlank,
     WhiteSpace,
+    Drawer,
     List,
     Badge,
     Card,
