@@ -13,6 +13,7 @@ import DrawerView from './DrawerView';
 import ListView from './ListView';
 import BadgeView from './BadgeView';
 import CardView from './CardView';
+import GridView from "./GridView";
 
 import ButtonView from './ButtonView';
 import CheckboxView from './CheckboxView';
@@ -69,6 +70,12 @@ const RouteNav = () => {
               <List.Item arrow='horizontal' onClick={() => {
               }}>
                   card 卡片
+              </List.Item>
+          </Link>
+          <Link to='/grid'>
+              <List.Item arrow='horizontal' onClick={() => {
+              }}>
+                  grid 卡片
               </List.Item>
           </Link>
       </List>
@@ -133,6 +140,9 @@ const RouteContent = () => {
           }}/>
           <Route path='/card' render={() => {
               return (<WrapView title='card' component={CardView}/>);
+          }}/>
+          <Route path='/grid' render={() => {
+              return (<WrapView title='grid' component={GridView}/>);
           }}/>
       </>
     );

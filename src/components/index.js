@@ -10,6 +10,7 @@ import Drawer from './drawer';
 import List from './list';
 import Badge from './badge';
 import Card from './card';
+import Grid from './grid';
 
 // Data-Entry
 import Button from './buttons';
@@ -23,6 +24,7 @@ export {
     List,
     Badge,
     Card,
+    Grid,
     Button,
     Checkbox
 };
