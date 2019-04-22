@@ -18,6 +18,7 @@ import GridView from "./GridView";
 import ButtonView from './ButtonView';
 import CheckboxView from './CheckboxView';
 
+import ModalView from './ModalView';
 
 const RouteNav = () => {
     const LayoutList = (
@@ -96,6 +97,17 @@ const RouteNav = () => {
           </Link>
       </List>
     );
+    const feedback = (
+        <List renderHeader={'feedback'}>
+            <Link to='/modal'>
+                <List.Item arrow='horizontal' onClick={() => {
+                }}>
+                    modal 对话框
+                </List.Item>
+            </Link>
+        </List>
+    );
+
     return (
       <Route path='/' exact render={() => {
           return (
@@ -104,6 +116,7 @@ const RouteNav = () => {
                 {NavigationList}
                 {DataDisplayList}
                 {DataEntryList}
+                {feedback}
             </>
           );
       }}/>
@@ -156,12 +169,20 @@ const RouteContent = () => {
           }}/>
       </>
     );
+    const feedbackContent = (
+        <>
+            <Route path='/modal' render={() => {
+                return (<WrapView title='modal' component={ModalView}/>);
+            }}/>
+        </>
+    );
     return (
       <>
           {LayoutContent}
           {NavigationContent}
           {DataDisplayContent}
           {DataEntryContent}
+          {feedbackContent}
       </>
     );
 };

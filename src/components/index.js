@@ -16,6 +16,9 @@ import Grid from './grid';
 import Button from './buttons';
 import Checkbox from './checkbox';
 
+// feedback
+import Modal from './modal';
+
 export {
     Flex,
     WingBlank,
@@ -26,5 +29,6 @@ export {
     Card,
     Grid,
     Button,
-    Checkbox
+    Checkbox,
+    Modal
 };
