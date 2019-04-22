@@ -64,7 +64,7 @@ const ListItem = React.forwardRef(
         <div className={wrapCls} ref={ref} onClick={onClick} {...props}>
             {thumb ? (
               <div className={`${prefixCls}-thumb`}>
-                  {typeof thumb === 'string' ? <img src={thumb}/> : thumb}
+                  {typeof thumb === 'string' ? <img src={thumb} alt=''/> : thumb}
               </div>
             ) : null}
             <div className={lineCls}>

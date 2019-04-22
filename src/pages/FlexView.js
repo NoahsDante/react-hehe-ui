@@ -1,5 +1,5 @@
 import React from 'react';
-import {Flex, List} from 'hehe-mobile';
+import {Flex} from 'hehe-mobile';
 
 const subTitle = {
     color: '#888',

@@ -6,9 +6,6 @@ const data = Array.from(new Array(9)).map((_val, i) => ({
     text: `name${i}`,
 }));
 
-const data1 = Array.from(new Array(9)).map(() => ({
-    icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',
-}));
 
 const GridView = () => {
     return (

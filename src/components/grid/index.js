@@ -7,18 +7,19 @@ import PropTypes from 'prop-types';
 import './style/grid.less';
 
 const propTypes = {
-    prefixCls: PropTypes.string
+    prefixCls: PropTypes.string,
+    hasLine: PropTypes.bool,
+    columnNum: PropTypes.number,
+    square: PropTypes.bool,
+    itemStyle:PropTypes.object
 };
 const defaultProps = {
     data: [],
     hasLine: true,
-    isCarousel: false,
     columnNum: 4,
-    carouselMaxRow: 2,
     prefixCls: 'hehe-grid',
     square: true,
     itemStyle: {},
-
 };
 const Grid = React.forwardRef(
   ({
@@ -52,7 +53,7 @@ const Grid = React.forwardRef(
                         {React.isValidElement(icon) ? (
                           icon
                         ) : (
-                          <img className={`${prefixCls}-icon`} src={icon}/>
+                          <img className={`${prefixCls}-icon`} src={icon} alt=''/>
                         )}
                         <div className={`${prefixCls}-text`}>{text}</div>
                     </div>

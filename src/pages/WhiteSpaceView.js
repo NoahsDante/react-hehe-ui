@@ -1,5 +1,5 @@
 import React from 'react';
-import {Flex, WhiteSpace} from 'hehe-mobile';
+import { WhiteSpace} from 'hehe-mobile';
 
 const Block = (poops) => {
     const style = {

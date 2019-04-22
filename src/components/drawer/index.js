@@ -1,4 +1,3 @@
-import classNames from 'classnames';
 import RmcDrawer from 'rmc-drawer';
 import React from 'react';
 import PropTypes from 'prop-types';
