@@ -6,12 +6,25 @@ import PropTypes from 'prop-types';
 import Modal from './modal';
 
 const propTypes = {};
-const defaultProps = {
+const defaultProps = {};
+const AlertElement = React.forwardRef((props, ref) => {
+    return (<div>ddddd</div>);
+});
+AlertElement.propTypes = propTypes;
+AlertElement.defaultProps = defaultProps;
+
+const Alert = () => {
+    Alert.wrapDiv = document.createElement('div');
+    document.body.append(Alert.wrapDiv);
+
+    return ReactDOM.render(<AlertElement/>, Alert.wrapDiv);
 
 };
-const Alert = React.forwardRef((props, ref) => {
-    return (<div></div>);
-});
-Alert.propTypes = propTypes;
-Alert.defaultProps = defaultProps;
+
+Alert.close = () => {
+    ReactDOM.unmountComponentAtNode(Alert.wrapDiv);
+    if (Alert.wrapDiv && Alert.wrapDiv.parentNode) {
+        Alert.wrapDiv.parentNode.removeChild(Alert.wrapDiv);
+    }
+};
 export default Alert;

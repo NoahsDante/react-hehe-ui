@@ -1,6 +1,9 @@
 import React from 'react';
 import {Button, List, Modal, WhiteSpace} from 'hehe-mobile';
 
+
+const Alert = Modal.Alert;
+
 function closest(el, selector) {
     const matchesSelector = el.matches || el.webkitMatchesSelector || el.mozMatchesSelector || el.msMatchesSelector;
     while (el) {
@@ -96,6 +99,9 @@ class ModalView extends React.Component {
                         </List.Item>
                     </List>
                 </Modal>
+                <WhiteSpace/>
+                <Button onClick={() => Alert()}>alert</Button>
+                <Button onClick={() => Alert.close()}>close</Button>
             </>
         );
     }
