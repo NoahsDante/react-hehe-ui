@@ -98,13 +98,13 @@ const Modal = React.forwardRef(
         let maskTransName;
         if (animated) {
             if (transparent) {
-                transName = maskTransName = 'am-fade';
+                transName = maskTransName = 'hehe-fade';
             } else {
-                transName = maskTransName = 'am-slide-up';
+                transName = maskTransName = 'hehe-slide-up';
             }
             if (popup) {
-                transName = animationType === 'slide-up' ? 'am-slide-up' : 'am-slide-down';
-                maskTransName = 'am-fade';
+                transName = animationType === 'slide-up' ? 'hehe-slide-up' : 'hehe-slide-down';
+                maskTransName = 'hehe-fade';
             }
         }
 
