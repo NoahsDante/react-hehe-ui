@@ -61,7 +61,6 @@ const AlertElement = React.forwardRef(
           maskClosable={false}
           footer={footer}
           maskTransitionName="hehe-fade"
-          animationType='fade'
           platform={platform}
           wrapProps={{onTouchStart: onWrapTouchStart}}
           {...props}

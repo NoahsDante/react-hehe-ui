@@ -3,6 +3,7 @@ import {Button, List, Modal, WhiteSpace} from 'hehe-mobile';
 
 
 const Alert = Modal.Alert;
+const Operation = Modal.Operation;
 
 function closest(el, selector) {
     const matchesSelector = el.matches || el.webkitMatchesSelector || el.mozMatchesSelector || el.msMatchesSelector;
@@ -179,7 +180,21 @@ class ModalView extends React.Component {
               >
                   promise
               </Button>
-
+              <WhiteSpace size="lg"/>
+              <div>操作目录</div>
+              <WhiteSpace size="lg"/>
+              <Button onClick={() =>
+                Operation(
+                  {
+                      actions: [
+                          {text: '标为未读', onPress: () => console.log('标为未读被点击了')},
+                          {text: '置顶聊天', onPress: () => console.log('置顶聊天被点击了')},
+                      ]
+                  }
+                )
+              }
+              >operation</Button>
+              <WhiteSpace size="lg"/>
           </>
         );
     }
