@@ -46,7 +46,7 @@ subtitle: 对话框
 
 `Modal.alert(title, message, actions?, platform?).close()` 可以在外部关闭 Alert
 
-### Modal.prompt(title, message, callbackOrActions, type?, defaultValue?, placeholders?, platform?)
+### Modal.prompt({title, message, callbackOrActions, type?, defaultValue?, placeholders?, platform})
 
 属性 | 说明 | 类型 | 默认值
 ----|-----|------|------
@@ -60,7 +60,7 @@ subtitle: 对话框
 
 `Modal.prompt(title, message, callbackOrActions, type?, defaultValue?, placeholders?, platform?).close()` 可以在外部关闭 prompt`
 
-### Modal.operation(actions?, platform?)
+### Modal.operation({actions?, platform?})
 
 属性 | 说明 | 类型 | 默认值
 ----|-----|------|------
