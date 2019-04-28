@@ -1,9 +1,10 @@
 import React from 'react';
 import {Button, List, Modal, WhiteSpace} from 'hehe-mobile';
 
-
 const Alert = Modal.Alert;
 const Operation = Modal.Operation;
+const Prompt = Modal.Prompt;
+
 
 function closest(el, selector) {
     const matchesSelector = el.matches || el.webkitMatchesSelector || el.mozMatchesSelector || el.msMatchesSelector;
@@ -194,6 +195,92 @@ class ModalView extends React.Component {
                 )
               }
               >operation</Button>
+              <WhiteSpace size="lg"/>
+              <div>输入弹出框</div>
+              <WhiteSpace size="lg"/>
+              <Button onClick={() =>
+                Prompt({
+                    title: 'input name',
+                    message: 'please input your name',
+                    type: 'default',
+                    defaultValue: null,
+                    placeholders: ['input your name'],
+                    callbackOrActions: [
+                        {
+                            text: 'Close',
+                            onPress: value => new Promise((resolve) => {
+                                setTimeout(() => {
+                                    resolve();
+                                    console.log(`value:${value}`);
+                                }, 1000);
+                            }),
+                        },
+                        {
+                            text: 'Hold on',
+                            onPress: value => new Promise((resolve, reject) => {
+                                setTimeout(() => {
+                                    reject();
+                                    console.log(`value:${value}`);
+                                }, 1000);
+                            }),
+                        }
+                    ]
+                })
+              }
+              >promise</Button>
+              <WhiteSpace size="lg"/>
+              <Button onClick={() =>
+                Prompt({
+                    title: 'defaultValue',
+                    message: 'defaultValue for prompt',
+                    type: 'default',
+                    defaultValue: '100',
+                    callbackOrActions: [
+                        {text: 'Cancel'},
+                        {text: 'Submit', onPress: value => console.log(`输入的内容:${value}`)},
+                    ]
+                })
+              }
+              >defaultValue</Button>
+
+              <WhiteSpace size="lg"/>
+              <Button onClick={() =>
+                Prompt({
+                    title: 'Password',
+                    message: 'Password Message',
+                    type: 'secure-text',
+                    callbackOrActions: password => console.log(`password: ${password}`)
+                })
+              }
+              >secure-text</Button>
+
+              <WhiteSpace size="lg"/>
+              <Button onClick={() =>
+                Prompt({
+                    title: 'Password',
+                    message: 'You can custom buttons',
+                    type: 'secure-text',
+                    callbackOrActions: [
+                        {text: '取消'},
+                        {text: '提交', onPress: password => console.log(`密码为:${password}`)},
+                    ],
+                })
+              }
+              >custom buttons</Button>
+
+              <WhiteSpace size="lg"/>
+              <Button onClick={() =>
+                Prompt({
+                    title: 'Login',
+                    message: 'Please input login information',
+                    type: 'login-password',
+                    placeholders: ['Please input name', 'Please input password'],
+                    callbackOrActions: (login, password) => console.log(`login: ${login}, password: ${password}`),
+                })
+              }
+              >login-password</Button>
+
+              <WhiteSpace size="lg"/>
               <WhiteSpace size="lg"/>
           </>
         );
