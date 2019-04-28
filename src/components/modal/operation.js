@@ -18,8 +18,6 @@ const defaultProps = {
 const OperationElement = React.forwardRef(
   ({
        prefixCls,
-       title,
-       message,
        actions,
        platform,
        onClose,
@@ -56,15 +54,16 @@ const OperationElement = React.forwardRef(
           visible
           operation
           transparent
+          prefixCls={prefixCls}
           transitionName="hehe-zoom"
           closable={false}
           maskClosable
-          footer={footer}
           onClose={onClose}
+          footer={footer}
           maskTransitionName="hehe-fade"
-          className={`${prefixCls}-operation`}
+          className="hehe-modal-operation"
           platform={platform}
-          wrapProps={{onTouchStart: onWrapTouchStart}}
+          wrapProps={{ onTouchStart: onWrapTouchStart }}
           {...props}
           ref={ref}
         >
