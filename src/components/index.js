@@ -5,6 +5,7 @@ import WhiteSpace from './whiteSpace';
 
 // Navigation
 import Drawer from './drawer';
+import NoticeBar from './noticeBar';
 
 // Data-Display
 import List from './list';
@@ -24,6 +25,7 @@ export {
     WingBlank,
     WhiteSpace,
     Drawer,
+    NoticeBar,
     List,
     Badge,
     Card,
