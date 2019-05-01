@@ -34,20 +34,7 @@ const ButtonView = () => {
               <Badge text="HOT" hot style={{marginLeft: 12}}/>
           </List.Item>
           <List.Item>
-              Customize
-              <Badge text="券" style={{marginLeft: 12, padding: '0 3px', backgroundColor: '#f19736', borderRadius: 2}}/>
-              <Badge text="NEW"
-                     style={{marginLeft: 12, padding: '0 3px', backgroundColor: '#21b68a', borderRadius: 2}}/>
-              <Badge text="自动缴费"
-                     style={{
-                         marginLeft: 12,
-                         padding: '0 3px',
-                         backgroundColor: '#fff',
-                         borderRadius: 2,
-                         color: '#f19736',
-                         border: '1px solid #f19736',
-                     }}
-              />
+
           </List.Item>
       </List>
     );
