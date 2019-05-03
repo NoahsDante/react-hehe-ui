@@ -3,6 +3,9 @@ import React from 'react';
 import Marquee, {MarqueeProps} from './marquee';
 import PropTypes from 'prop-types';
 
+
+import './style/noticeBar.less'
+
 const propTypes = {
     prefixCls: PropTypes.string,
     className: PropTypes.string,

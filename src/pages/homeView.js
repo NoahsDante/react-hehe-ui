@@ -9,6 +9,7 @@ import WingBlankView from './WingBlankView';
 import WhiteSpaceView from './WhiteSpaceView'
 
 import DrawerView from './DrawerView';
+import NoticeBarView from './NoticeBarView';
 
 import ListView from './ListView';
 import BadgeView from './BadgeView';
@@ -49,6 +50,12 @@ const RouteNav = () => {
               <List.Item arrow='horizontal' onClick={() => {
               }}>
                   drawer 抽屉
+              </List.Item>
+          </Link>
+          <Link to='/noticeBar'>
+              <List.Item arrow='horizontal' onClick={() => {
+              }}>
+                  noticeBar 通告栏
               </List.Item>
           </Link>
       </List>
@@ -140,6 +147,9 @@ const RouteContent = () => {
       <>
           <Route path='/drawer' render={() => {
               return (<WrapView title='Drawer' component={DrawerView}/>);
+          }}/>
+          <Route path='/noticeBar' render={() => {
+              return (<WrapView title='noticeBar' component={NoticeBarView}/>);
           }}/>
       </>
     );
