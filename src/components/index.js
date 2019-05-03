@@ -16,6 +16,7 @@ import Grid from './grid';
 // Data-Entry
 import Button from './buttons';
 import Checkbox from './checkbox';
+import Radio from './radio';
 
 // feedback
 import Modal from './modal';
@@ -32,5 +33,6 @@ export {
     Grid,
     Button,
     Checkbox,
+    Radio,
     Modal
 };

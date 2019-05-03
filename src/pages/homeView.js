@@ -18,6 +18,7 @@ import GridView from "./GridView";
 
 import ButtonView from './ButtonView';
 import CheckboxView from './CheckboxView';
+import RadioView from './RadioView';
 
 import ModalView from './ModalView';
 
@@ -102,6 +103,12 @@ const RouteNav = () => {
                   checkbox 复选框
               </List.Item>
           </Link>
+          <Link to='/radio'>
+              <List.Item arrow='horizontal' onClick={() => {
+              }}>
+                  radio 单选框
+              </List.Item>
+          </Link>
       </List>
     );
     const feedback = (
@@ -176,6 +183,9 @@ const RouteContent = () => {
           }}/>
           <Route path='/checkbox' render={() => {
               return (<WrapView title='checkbox' component={CheckboxView}/>);
+          }}/>
+          <Route path='/radio' render={() => {
+              return (<WrapView title='radio' component={RadioView}/>);
           }}/>
       </>
     );
