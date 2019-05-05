@@ -17,6 +17,7 @@ import Grid from './grid';
 import Button from './buttons';
 import Checkbox from './checkbox';
 import Radio from './radio';
+import SearchBar from './searchBar';
 
 // feedback
 import Modal from './modal';
@@ -34,5 +35,6 @@ export {
     Button,
     Checkbox,
     Radio,
+    SearchBar,
     Modal
 };

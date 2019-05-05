@@ -5,6 +5,8 @@ import TouchFeedback from 'rmc-feedback';
 
 import getDataAttr from '../util/getDataAttr';
 
+import './style/searchBar.less'
+
 function noop() {
 }
 
@@ -183,10 +185,6 @@ class SearchBar extends React.Component {
         if (this.props.onBlur) {
             // fix autoFocus item blur with flash
             setTimeout(() => {
-                // fix ios12 wechat browser click failure after input
-                if (document.body) {
-                    document.body.scrollTop = document.body.scrollTop;
-                }
             }, 100);
             this.props.onBlur();
         }
@@ -316,7 +314,7 @@ class SearchBar extends React.Component {
 }
 
 SearchBar.propTypes = propTypes;
-SearchBar.defaultProps = defaultProps
+SearchBar.defaultProps = defaultProps;
 
 
 export default SearchBar;
