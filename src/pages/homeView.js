@@ -20,6 +20,7 @@ import ButtonView from './ButtonView';
 import CheckboxView from './CheckboxView';
 import RadioView from './RadioView';
 import SearchBarView from './SearchBarView';
+import StepperView from './StepperView';
 
 import ModalView from './ModalView';
 
@@ -116,6 +117,12 @@ const RouteNav = () => {
                   searchBar 搜索栏
               </List.Item>
           </Link>
+          <Link to='/stepper'>
+              <List.Item arrow='horizontal' onClick={() => {
+              }}>
+                  stepper 步进器
+              </List.Item>
+          </Link>
       </List>
     );
     const feedback = (
@@ -196,6 +203,9 @@ const RouteContent = () => {
           }}/>
           <Route path='/searchBar' render={() => {
               return (<WrapView title='searchBar' component={SearchBarView}/>);
+          }}/>
+          <Route path='/stepper' render={() => {
+              return (<WrapView title='stepper' component={StepperView}/>);
           }}/>
       </>
     );

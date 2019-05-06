@@ -79,7 +79,8 @@
     "rc-checkbox": "^2.1.6",
     "react-router-dom": "^5.0.0",
     "rmc-drawer": "^0.4.11",
-    "rmc-feedback": "^2.0.0"
+    "rmc-feedback": "^2.0.0",
+    "rmc-input-number": "^1.0.5"
   },
   "jest": {
     "collectCoverageFrom": [

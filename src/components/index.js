@@ -18,6 +18,7 @@ import Button from './buttons';
 import Checkbox from './checkbox';
 import Radio from './radio';
 import SearchBar from './searchBar';
+import Stepper from './stepper';
 
 // feedback
 import Modal from './modal';
@@ -36,5 +37,6 @@ export {
     Checkbox,
     Radio,
     SearchBar,
+    Stepper,
     Modal
 };
