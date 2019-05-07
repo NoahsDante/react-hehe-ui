@@ -19,6 +19,7 @@ import Checkbox from './checkbox';
 import Radio from './radio';
 import SearchBar from './searchBar';
 import Stepper from './stepper';
+import Switch from './switch';
 
 // feedback
 import Modal from './modal';
@@ -38,5 +39,6 @@ export {
     Radio,
     SearchBar,
     Stepper,
+    Switch,
     Modal
 };
