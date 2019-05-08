@@ -19,7 +19,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-    prefixCls: 'am-switch',
+    prefixCls: 'hehe-switch',
     name: '',
     checked: false,
     disabled: false,

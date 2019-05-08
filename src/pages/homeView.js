@@ -21,6 +21,7 @@ import CheckboxView from './CheckboxView';
 import RadioView from './RadioView';
 import SearchBarView from './SearchBarView';
 import StepperView from './StepperView';
+import SwitchView from './SwitchView';
 
 import ModalView from './ModalView';
 
@@ -123,6 +124,12 @@ const RouteNav = () => {
                   stepper 步进器
               </List.Item>
           </Link>
+          <Link to='/switch'>
+              <List.Item arrow='horizontal' onClick={() => {
+              }}>
+                  switch 滑动开关
+              </List.Item>
+          </Link>
       </List>
     );
     const feedback = (
@@ -206,6 +213,9 @@ const RouteContent = () => {
           }}/>
           <Route path='/stepper' render={() => {
               return (<WrapView title='stepper' component={StepperView}/>);
+          }}/>
+          <Route path='/switch' render={() => {
+              return (<WrapView title='switch' component={SwitchView}/>);
           }}/>
       </>
     );
