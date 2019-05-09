@@ -1,35 +1,40 @@
-import classNames from 'classnames';
 import React from 'react';
 import {
     DefaultTabBar as RMCDefaultTabBar,
-    TabBarPropsType,
     Tabs as RMCTabs,
 } from 'rmc-tabs';
-import PropTypes from 'prop-types';
-import '../style/tabs.less';
+import PropsTypes from 'prop-types';
+
+
+import './style/tabs.less';
+
+const propTypes = {
+    prefixCls: PropsTypes.string,
+
+};
+
+const defaultProps = {
+    prefixCls: 'hehe-tabs',
+};
 
 export class DefaultTabBar extends RMCDefaultTabBar {
     static defaultProps = {
-        ...(RMCDefaultTabBar).defaultProps,
-        prefixCls: 'am-tabs-default-bar',
+        ...RMCDefaultTabBar.defaultProps,
+        prefixCls: 'hehe-tabs-default-bar',
     };
 }
 
-const Tabs = React.forwardRef(({className, ...props}, ref) => {
-
-    const renderTabBar = (props) => {
-        const { renderTab } = this.props;
-        return <DefaultTabBar {...props} renderTab={renderTab} />;
+const Tabs = React.forwardRef(({...props}, ref) => {
+    const renderTabBar = (TabBarProps) => {
+        const {renderTab} = props;
+        return <DefaultTabBar {...TabBarProps} renderTab={renderTab}/>;
     }
-
-
-        return <RMCTabs renderTabBar={renderTabBar} {...props} />;
-
+    return (
+      <RMCTabs renderTabBar={renderTabBar} {...props} ref={ref}/>
+    );
 });
-Tabs.propTypes = {
-    prefixCls: 'hehe-tabs',
-    className: PropTypes.string
-};
-Tabs.defaultProps = DefaultTabBar;
 
-export default Tabs
+Tabs.defaultProps = defaultProps;
+Tabs.propTypes = propTypes;
+
+export default Tabs;
