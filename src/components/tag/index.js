@@ -130,7 +130,7 @@ class Tag extends React.Component {
     }
 }
 
-Tabs.defaultProps = defaultProps;
-Tabs.propTypes = propTypes;
+Tag.defaultProps = defaultProps;
+Tag.propTypes = propTypes;
 
-export default Tabs;
+export default Tag;
