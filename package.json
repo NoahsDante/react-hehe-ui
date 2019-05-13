@@ -81,7 +81,8 @@
     "react-router-dom": "^5.0.0",
     "rmc-drawer": "^0.4.11",
     "rmc-feedback": "^2.0.0",
-    "rmc-input-number": "^1.0.5"
+    "rmc-input-number": "^1.0.5",
+    "rmc-notification": "^1.0.0"
   },
   "jest": {
     "collectCoverageFrom": [
