@@ -6,6 +6,7 @@ import WhiteSpace from './whiteSpace';
 // Navigation
 import Drawer from './drawer';
 import NoticeBar from './noticeBar';
+import Tabs from './tabs';
 
 // Data-Display
 import List from './list';
@@ -34,6 +35,7 @@ export {
     Badge,
     Card,
     Grid,
+    Tabs,
     Button,
     Checkbox,
     Radio,

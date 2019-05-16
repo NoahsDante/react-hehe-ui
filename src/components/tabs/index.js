@@ -36,5 +36,6 @@ const Tabs = React.forwardRef(({...props}, ref) => {
 
 Tabs.defaultProps = defaultProps;
 Tabs.propTypes = propTypes;
+Tabs.DefaultTabBar = DefaultTabBar;
 
 export default Tabs;
