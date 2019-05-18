@@ -25,6 +25,7 @@ import Switch from './switch';
 
 // feedback
 import Modal from './modal';
+import Toast from './toast';
 
 export {
     Flex,
@@ -44,5 +45,6 @@ export {
     SearchBar,
     Stepper,
     Switch,
-    Modal
+    Modal,
+    Toast
 };

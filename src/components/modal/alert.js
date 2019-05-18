@@ -82,7 +82,7 @@ Alert = ({...props}) => {
             wrapDiv.parentNode.removeChild(wrapDiv);
         }
     };
-    ReactDOM.render(<AlertElement onClose={close} {...props}/>, wrapDiv)
+    ReactDOM.render(<AlertElement onClose={close} {...props}/>, wrapDiv);
     return {
         close
     };

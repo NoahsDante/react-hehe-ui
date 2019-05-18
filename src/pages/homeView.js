@@ -26,6 +26,7 @@ import StepperView from './StepperView';
 import SwitchView from './SwitchView';
 
 import ModalView from './ModalView';
+import ToastView from './ToastView';
 
 const RouteNav = () => {
     const LayoutList = (
@@ -154,6 +155,12 @@ const RouteNav = () => {
                     modal 对话框
                 </List.Item>
             </Link>
+            <Link to='/toast'>
+                <List.Item arrow='horizontal' onClick={() => {
+                }}>
+                    toast 提示框
+                </List.Item>
+            </Link>
         </List>
     );
 
@@ -243,6 +250,9 @@ const RouteContent = () => {
         <>
             <Route path='/modal' render={() => {
                 return (<WrapView title='modal' component={ModalView}/>);
+            }}/>
+            <Route path='/toast' render={() => {
+                return (<WrapView title='modal' component={ToastView}/>);
             }}/>
         </>
     );
