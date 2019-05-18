@@ -16,6 +16,7 @@ import ListView from './ListView';
 import BadgeView from './BadgeView';
 import CardView from './CardView';
 import GridView from "./GridView";
+import TagView from "./TagView";
 
 import ButtonView from './ButtonView';
 import CheckboxView from './CheckboxView';
@@ -95,6 +96,12 @@ const RouteNav = () => {
               <List.Item arrow='horizontal' onClick={() => {
               }}>
                   grid 卡片
+              </List.Item>
+          </Link>
+          <Link to='/tag'>
+              <List.Item arrow='horizontal' onClick={() => {
+              }}>
+                  tag 标签
               </List.Item>
           </Link>
       </List>
@@ -204,6 +211,9 @@ const RouteContent = () => {
           }}/>
           <Route path='/grid' render={() => {
               return (<WrapView title='grid' component={GridView}/>);
+          }}/>
+          <Route path='/tag' render={() => {
+              return (<WrapView title='tag' component={TagView}/>);
           }}/>
       </>
     );

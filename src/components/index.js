@@ -13,6 +13,7 @@ import List from './list';
 import Badge from './badge';
 import Card from './card';
 import Grid from './grid';
+import Tag from './tag';
 
 // Data-Entry
 import Button from './buttons';
@@ -31,11 +32,12 @@ export {
     WhiteSpace,
     Drawer,
     NoticeBar,
+    Tabs,
     List,
     Badge,
     Card,
     Grid,
-    Tabs,
+    Tag,
     Button,
     Checkbox,
     Radio,
