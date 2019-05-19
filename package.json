@@ -110,7 +110,10 @@
     ],
     "moduleNameMapper": {
       "^react-native$": "react-native-web",
-      "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
+      "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy",
+      "^hehe-mobile$": "<rootDir>/src/components/index.js",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/test/fileMock.js",
+      "\\.(css|scss)$": "identity-obj-proxy"
     },
     "moduleFileExtensions": [
       "web.js",
@@ -125,8 +128,8 @@
       "node"
     ],
     "watchPlugins": [
-      "/Users/hehe/ work/webNotes/react/sourceCode/react-ui/node_modules/jest-watch-typeahead/filename.js",
-      "/Users/hehe/ work/webNotes/react/sourceCode/react-ui/node_modules/jest-watch-typeahead/testname.js"
+      "/Users/hehe/ work/react-hehe-ui/node_modules/jest-watch-typeahead/filename.js",
+      "/Users/hehe/ work/react-hehe-ui/node_modules/jest-watch-typeahead/testname.js"
     ]
   },
   "babel": {
