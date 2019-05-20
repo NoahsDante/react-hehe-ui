@@ -9,7 +9,7 @@ import './style/list.less'
 const propTypes = {
     prefixCls: PropTypes.string,
     className: PropTypes.string,
-    renderHeader: PropTypes.func,
+    renderHeader: PropTypes.oneOfType([PropTypes.string,PropTypes.func]),
     renderFooter: PropTypes.func
 };
 const defaultProps = {
