@@ -9,4 +9,5 @@ describe('Button', () => {
         expect(renderToJson(wrapper)).toMatchSnapshot();
         expect(wrapper.is('a')).toBe(true);
     });
+
 });
