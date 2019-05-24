@@ -18,7 +18,7 @@ const propTypes = {
     disabled: PropTypes.bool,
     onClick: PropTypes.func,
     href: PropTypes.string,
-    as: PropTypes.element
+    as: PropTypes.string
 };
 const defaultProps = {
     prefixCls: 'hehe-button',
