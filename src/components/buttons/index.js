@@ -28,45 +28,44 @@ const defaultProps = {
     role: 'button'
 };
 const Button = React.forwardRef(
-    ({
-         prefixCls,
-         className,
-         variant,
-         inline,
-         disabled,
-         size,
-         as,
-         role,
-         href,
-         activeStyle,
-         activeClassName,
-         onClick,
-         ...props
-     }, ref) => {
-        const wrapCls = classNames(prefixCls, {
-            [`${prefixCls}-primary`]: variant === 'primary',
-            [`${prefixCls}-ghost`]: variant === 'ghost',
-            [`${prefixCls}-warning`]: variant === 'warning',
-            [`${prefixCls}-small`]: size === 'small',
-            [`${prefixCls}-inline`]: inline,
-            [`${prefixCls}-disabled`]: disabled,
-        }, className);
+  ({
+       prefixCls,
+       className,
+       variant,
+       inline,
+       disabled,
+       size,
+       as,
+       role,
+       activeStyle,
+       activeClassName,
+       onClick,
+       ...props
+   }, ref) => {
+      const wrapCls = classNames(prefixCls, {
+          [`${prefixCls}-primary`]: variant === 'primary',
+          [`${prefixCls}-ghost`]: variant === 'ghost',
+          [`${prefixCls}-warning`]: variant === 'warning',
+          [`${prefixCls}-small`]: size === 'small',
+          [`${prefixCls}-inline`]: inline,
+          [`${prefixCls}-disabled`]: disabled,
+      }, className);
 
-        let Component = as || 'a';
-        if (!href) {
-            props.href = '#';
-        }
-        return (
-            <TouchFeedback
-                disabled={disabled}
-                activeClassName={activeClassName || (activeStyle ? `${prefixCls}-active` : undefined)}
-                activeStyle={activeStyle}
-            >
-                <Component role={role} className={wrapCls}
-                           onClick={disabled ? undefined : onClick} {...props} ref={ref}/>
-            </TouchFeedback>
-        )
-    });
+      let Component = as || 'a';
+      if (!props.href) {
+          props.href = '#';
+      }
+      return (
+        <TouchFeedback
+          disabled={disabled}
+          activeClassName={activeClassName || (activeStyle ? `${prefixCls}-active` : undefined)}
+          activeStyle={activeStyle}
+        >
+            <Component role={role} className={wrapCls}
+                       onClick={disabled ? undefined : onClick} {...props} ref={ref}/>
+        </TouchFeedback>
+      )
+  });
 
 
 Button.propTypes = propTypes;

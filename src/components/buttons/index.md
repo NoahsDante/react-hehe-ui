@@ -23,4 +23,4 @@ subtitle: 按钮
 | prefixCls |  class前缀 | string | `hehe-button` |
 | className |  样式类名 | string | 无 |
 | href |  跳转链接地址 | string | 无 |
-| as |  元素类型 | element/React.Element | <a> |
+| as |  string | 字符串 | <a> |
