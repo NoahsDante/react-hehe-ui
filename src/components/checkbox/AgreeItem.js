@@ -6,28 +6,32 @@ import Checkbox from './Checkbox';
 
 const propTypes = {
     prefixCls: PropTypes.string,
+    change: PropTypes.func
 };
 const defaultProps = {
     prefixCls: 'hehe-checkbox',
+    change: () => {
+    }
 
 };
-const ArgreeItem = React.forwardRef(
+const AgreeItem = React.forwardRef(
   ({
        prefixCls,
        className,
        style,
+       change,
        ...props
    }, ref) => {
       const wrapCls = classnames(`${prefixCls}-agree`, className);
       return (
         <div className={wrapCls} style={style} ref={ref}>
-            <Checkbox {...props} className={`${prefixCls}-agree-label`}/>
+            <Checkbox {...props} onChange={change} className={`${prefixCls}-agree-label`}/>
         </div>
       )
   });
 
 
-ArgreeItem.propTypes = propTypes;
+AgreeItem.propTypes = propTypes;
 
-ArgreeItem.defaultProps = defaultProps;
-export default ArgreeItem;
+AgreeItem.defaultProps = defaultProps;
+export default AgreeItem;

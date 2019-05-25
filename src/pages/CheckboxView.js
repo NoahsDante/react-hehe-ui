@@ -25,7 +25,7 @@ const ButtonView = () => {
           </List>
           <Flex>
               <Flex.Item>
-                  <Checkbox.AgreeItem data-seed="logId" onChange={e => console.log('checkbox', e)}>
+                  <Checkbox.AgreeItem data-seed="logId" change={e => console.log('checkbox', e)}>
                       Agree <a href='#' onClick={(e) => {
                       e.preventDefault();
                       alert('agree it');
