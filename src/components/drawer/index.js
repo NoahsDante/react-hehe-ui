@@ -16,7 +16,7 @@ const Drawer = React.forwardRef((
   {
       ...props
   }, ref) => {
-
+    props.children = (<div></div>);
     return (<RmcDrawer {...props} ref={ref}/>);
 
 });
