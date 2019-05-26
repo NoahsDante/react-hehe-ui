@@ -14,10 +14,13 @@ describe('Drawer', () => {
         expect(warpper.is(prefixCls)).toBe(true);
     });
     it('Should open Drawer', () => {
-        const wrapper = shallow(<Drawer
+        const wrapper = mount(<Drawer
+          open={false}
           sidebar={<div>Drawer展开</div>}
         />);
-        const instance = wrapper.instance();
-        expect(instance).toBe(null);
+        wrapper.setProps({open: true});
+        expect(wrapper.find('.hehe-drawer-overlay').prop('style')).toEqual({"opacity": 1, "visibility": "visible"});
+        wrapper.setProps({open: false});
+        expect(wrapper.find('.hehe-drawer-overlay').prop('style')).toEqual({});
     });
 });
