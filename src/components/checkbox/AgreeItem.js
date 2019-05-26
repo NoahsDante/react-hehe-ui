@@ -10,7 +10,7 @@ const propTypes = {
 };
 const defaultProps = {
     prefixCls: 'hehe-checkbox',
-    change: () => {
+    onChange: () => {
     }
 
 };
@@ -19,13 +19,13 @@ const AgreeItem = React.forwardRef(
        prefixCls,
        className,
        style,
-       change,
+       onChange,
        ...props
    }, ref) => {
       const wrapCls = classnames(`${prefixCls}-agree`, className);
       return (
         <div className={wrapCls} style={style} ref={ref}>
-            <Checkbox {...props} onChange={change} className={`${prefixCls}-agree-label`}/>
+            <Checkbox {...props} onChange={onChange} className={`${prefixCls}-agree-label`}/>
         </div>
       )
   });

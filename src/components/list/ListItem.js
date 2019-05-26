@@ -9,10 +9,10 @@ const propTypes = {
     prefixCls: PropTypes.string,
     error: PropTypes.bool,
     disabled: PropTypes.bool,
-    align: PropTypes.oneOf('top', 'middle', 'bottom'),
+    align: PropTypes.oneOf(['top', 'middle', 'bottom']),
     multipleLine: PropTypes.bool,
     wrap: PropTypes.bool,
-    arrow: PropTypes.oneOf('horizontal', 'vertical', 'vertical-up')
+    arrow: PropTypes.oneOf(['horizontal', 'vertical', 'vertical-up'])
 };
 const defaultProps = {
     prefixCls: 'hehe-list',
