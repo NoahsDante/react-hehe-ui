@@ -23,4 +23,16 @@ describe('Drawer', () => {
         wrapper.setProps({open: false});
         expect(wrapper.find('.hehe-drawer-overlay').prop('style')).toEqual({});
     });
+    it('Should open docked', () => {
+        const wrapper = mount(<Drawer
+          docked={true}
+          sidebar={<div>Drawer展开</div>}
+        />);
+        const domNode = wrapper.find('.hehe-drawer-sidebar').getDOMNode();
+        console.log(getComputedStyle(domNode));
+        wrapper.setProps({docked: true});
+        console.log(getComputedStyle(domNode));
+        wrapper.setProps({docked: false});
+        console.log(getComputedStyle(domNode));
+    });
 });
