@@ -7,11 +7,11 @@ describe('Drawer', () => {
     const prefixCls = '.hehe-drawer';
 
     it('Should output a Drawer', () => {
-        const warpper = render(<Drawer
+        const wrapper = render(<Drawer
           sidebar={<div>Drawer展开</div>}
         />);
-        expect(renderToJson(warpper)).toMatchSnapshot();
-        expect(warpper.is(prefixCls)).toBe(true);
+        expect(renderToJson(wrapper)).toMatchSnapshot();
+        expect(wrapper.is(prefixCls)).toBe(true);
     });
     it('Should open Drawer', () => {
         const wrapper = mount(<Drawer
