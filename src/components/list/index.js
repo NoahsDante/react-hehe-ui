@@ -10,7 +10,7 @@ const propTypes = {
     prefixCls: PropTypes.string,
     className: PropTypes.string,
     renderHeader: PropTypes.oneOfType([PropTypes.string,PropTypes.func]),
-    renderFooter: PropTypes.func
+    renderFooter: PropTypes.oneOfType([PropTypes.string,PropTypes.func]),
 };
 const defaultProps = {
     prefixCls: 'hehe-list'
