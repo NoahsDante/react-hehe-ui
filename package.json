@@ -133,8 +133,8 @@
       "node"
     ],
     "watchPlugins": [
-      "/Users/hehe/ work/react-hehe-ui/node_modules/jest-watch-typeahead/filename.js",
-      "/Users/hehe/ work/react-hehe-ui/node_modules/jest-watch-typeahead/testname.js"
+      "/Users/hehe/work/react-hehe-ui/node_modules/jest-watch-typeahead/filename.js",
+      "/Users/hehe/work/react-hehe-ui/node_modules/jest-watch-typeahead/testname.js"
     ]
   },
   "babel": {

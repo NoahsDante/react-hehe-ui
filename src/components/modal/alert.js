@@ -87,6 +87,9 @@ Alert = ({...props}) => {
         close
     };
 };
-
+// 进行单元测试
+export {
+    AlertElement
+};
 
 export default Alert;
