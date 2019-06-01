@@ -249,6 +249,8 @@ Prompt = ({...props}) => {
         close
     };
 };
-
-
+// 进行单元测试
+export {
+    PromptElement
+}
 export default Prompt;

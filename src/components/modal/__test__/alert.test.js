@@ -6,12 +6,11 @@ import {AlertElement} from '../alert';
 describe('Alert', () => {
     const prefixCls = '.hehe-modal';
     it('Should out a Alert', () => {
-        const wrapper = mount(<AlertElement />);
-        expect(renderToJson(wrapper)).toMatchSnapshot();
+        const wrapper = mount(<AlertElement/>);
         expect(wrapper.find(`${prefixCls}-content`)).toHaveLength(1);
     });
     it('Should set props', () => {
-        const wrapper = mount(<AlertElement title='Delete' message='Are you sure???' />);
+        const wrapper = mount(<AlertElement title='Delete' message='Are you sure???'/>);
         expect(wrapper.find(`${prefixCls}-title`)).toHaveLength(1);
         expect(wrapper.find(`${prefixCls}-alert-content`)).toHaveLength(1);
     });
@@ -22,8 +21,8 @@ describe('Alert', () => {
           title='Delete'
           message='Are you sure???'
           actions={[
-            {text: 'Cancel', onPress: clickHandle},
-            ]}
+              {text: 'Cancel', onPress: clickHandle},
+          ]}
         />);
         wrapper.find(`${prefixCls}-button`).simulate('click');
         expect(clickHandle).toBeCalled();

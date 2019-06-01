@@ -21,7 +21,6 @@ describe('Modal', () => {
     });
     it('Should out a Modal', () => {
         const wrapper = mount(<Modal visible={true}/>);
-        expect(renderToJson(wrapper)).toMatchSnapshot();
         expect(wrapper.find(`${prefixCls}-content`)).toHaveLength(1);
     });
     it('Should set props', () => {

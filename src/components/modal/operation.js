@@ -63,7 +63,7 @@ const OperationElement = React.forwardRef(
           maskTransitionName="hehe-fade"
           className="hehe-modal-operation"
           platform={platform}
-          wrapProps={{ onTouchStart: onWrapTouchStart }}
+          wrapProps={{onTouchStart: onWrapTouchStart}}
           {...props}
           ref={ref}
         >
@@ -87,6 +87,9 @@ Operation = ({...props}) => {
         close
     };
 };
-
+// 进行单元测试
+export {
+    OperationElement
+}
 
 export default Operation;
