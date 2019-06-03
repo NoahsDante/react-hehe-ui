@@ -29,5 +29,5 @@ const NoticeBarView = () => {
           </NoticeBar>
       </>
     );
-}
+};
 export default NoticeBarView;
