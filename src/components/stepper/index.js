@@ -26,7 +26,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-    prefixCls: 'am-stepper',
+    prefixCls: 'hehe-stepper',
     step: 1,
     readOnly: false,
     showNumber: false,
@@ -39,8 +39,8 @@ const Stepper = React.forwardRef(({className, showNumber, ...props}, ref) => {
     });
     return (
       <RMCInputNumber
-        upHandler={'dddd'}
-        downHandler={'ssss'}
+        upHandler={'+'}
+        downHandler={'-'}
         {...props}
         ref={ref}
         className={stepperClass}

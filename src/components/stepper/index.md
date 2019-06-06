@@ -17,7 +17,7 @@ subtitle: 步进器
 | min     | 最小值   | Number | -Infinity        |
 | max     | 最大值       | Number      | Infinity           |
 | value     | 当前值       | Number      |            |
-| step     | 每次改变步数，可以为小数  | Number or String      |  1      |
+| stestepp     | 每次改变步数，可以为小数  | Number or String      |  1      |
 | defaultValue     | 初始值       | Number      |            |
 | onChange     | 变化时回调函数      | (): void      |            |
 | disabled     | 禁用       | Boolean      |      false      |
