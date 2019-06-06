@@ -31,10 +31,10 @@ const Grid = React.forwardRef(
        activeStyle,
        activeClassName,
        itemStyle,
+       columnNum,
        ...props
    }, ref) => {
       let {
-          columnNum,
           onClick,
           renderItem,
       } = props;

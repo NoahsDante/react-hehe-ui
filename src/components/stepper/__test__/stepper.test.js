@@ -16,11 +16,4 @@ describe('Stepper', () => {
         expect(renderToJson(wrapper)).toMatchSnapshot();
         expect(wrapper.is(prefixCls)).toBe(true);
     });
-    it('Should autoFocus',() => {
-        const focusHandle = jest.fn();
-        const wrapper = mount( <Stepper placeholder="自动获取光标" onFocus={focusHandle} />);
-        wrapper.find('input[type="search"]').simulate('focus');
-        expect(focusHandle).toBeCalled();
-
-    });
 });
