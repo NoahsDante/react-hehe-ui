@@ -2,16 +2,17 @@ import classnames from 'classnames';
 import React from 'react';
 import TouchFeedback from 'rmc-feedback';
 import getDataAttr from '../util/getDataAttr';
+import Icon from '../icon';
 import PropsTypes from "prop-types";
 
 import './style/tag.less';
 
 
 const propTypes = {
-    disabled: PropsTypes.boolean,
-    selected: PropsTypes.boolean,
-    closable: PropsTypes.boolean,
-    small: PropsTypes.boolean,
+    disabled: PropsTypes.bool,
+    selected: PropsTypes.bool,
+    closable: PropsTypes.bool,
+    small: PropsTypes.bool,
     onChange: PropsTypes.func,
     onClose: PropsTypes.func,
     afterClose: PropsTypes.func,
@@ -112,6 +113,7 @@ class Tag extends React.Component {
                   onClick={this.onTagClose}
                   aria-label="remove tag"
                 >
+                    <Icon type="cross-circle" size="xs" aria-hidden="true" />
                 </div>
             </TouchFeedback>
           ) : null;
