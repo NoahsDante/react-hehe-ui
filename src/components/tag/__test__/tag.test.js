@@ -26,14 +26,9 @@ describe('Tag', () => {
         expect(shallowToJson(wrapper)).toMatchSnapshot();
         expect(wrapper.is(`${prefixCls}-active`)).toBe(true)
     });
-    it('Should set props closable',() => {
-        const  wrapper = shallow( <Tag closable>closable</Tag>);
-        expect(shallowToJson(wrapper)).toMatchSnapshot();
-        expect(wrapper.is(`${prefixCls}-closable`)).toBe(true)
-    });
     it('Should call onChange',() => {
         const changeHandle = jest.fn();
-        const  wrapper = mount( <Tag onChange={changeHandle}>closable</Tag>);
+        const  wrapper = mount( <Tag onChange={changeHandle}>onChange</Tag>);
         expect(mountToJson(wrapper)).toMatchSnapshot();
         wrapper.find(prefixCls).simulate('click');
         wrapper.find(prefixCls).simulate('click');
