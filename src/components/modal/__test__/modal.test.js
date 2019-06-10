@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Dialog from 'rmc-dialog';
 import {render, mount, shallow} from 'enzyme';
-import {renderToJson} from 'enzyme-to-json';
+import {mountToJson, renderToJson} from 'enzyme-to-json';
 import Modal from '../modal';
 import App from "../../../App";
 
@@ -21,6 +21,7 @@ describe('Modal', () => {
     });
     it('Should out a Modal', () => {
         const wrapper = mount(<Modal visible={true}/>);
+        expect(mountToJson(wrapper)).toMatchSnapshot();
         expect(wrapper.find(`${prefixCls}-content`)).toHaveLength(1);
     });
     it('Should set props', () => {
@@ -40,6 +41,7 @@ describe('Modal', () => {
           }]}
           afterClose={afterCloseClickHandle}
         />);
+        expect(mountToJson(wrapper)).toMatchSnapshot();
         wrapper.find(`${prefixCls}-button`).simulate('click');
         expect(footerClickHandle).toBeCalled();
         expect(wrapper.find(`${prefixCls}-title`)).toHaveLength(1);

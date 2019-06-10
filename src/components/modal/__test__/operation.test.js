@@ -1,6 +1,7 @@
 import React from 'react';
 import {render, mount, shallow} from 'enzyme';
 import {OperationElement} from '../operation';
+import {mountToJson} from "enzyme-to-json";
 
 describe('OperationElement', () => {
     const prefixCls = '.hehe-modal';
@@ -15,10 +16,12 @@ describe('OperationElement', () => {
     };
     it('Should out a OperationElement', () => {
         const wrapper = mount(<OperationElement {...props}/>);
+        expect(mountToJson(wrapper)).toMatchSnapshot();
         expect(wrapper.find(`${prefixCls}-content`)).toHaveLength(1);
     });
     it('Should call click callback', () => {
         const wrapper = mount(<OperationElement {...props}/>);
+        expect(mountToJson(wrapper)).toMatchSnapshot();
         wrapper.find(`${prefixCls}-button`).at(0).simulate('click');
         expect(clickHandle).toBeCalled();
     });

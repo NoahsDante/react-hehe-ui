@@ -1,6 +1,6 @@
 import React from 'react';
 import {render, mount, shallow} from 'enzyme';
-import {renderToJson} from 'enzyme-to-json';
+import {renderToJson, mountToJson} from 'enzyme-to-json';
 import Radio from '../index';
 
 describe('Radio', () => {
@@ -23,6 +23,7 @@ describe('Radio', () => {
     it('Should call change callback', () => {
         const changeHandle = jest.fn();
         const wrapper = mount(<Radio onChange={changeHandle}/>);
+        expect(mountToJson(wrapper)).toMatchSnapshot();
         wrapper.find('input').simulate('change');
         expect(changeHandle).toBeCalled();
     });

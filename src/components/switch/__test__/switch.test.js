@@ -23,12 +23,14 @@ describe('Switch', () => {
     it('Should call onChange callback', () => {
         const changeHandle = jest.fn();
         const wrapper = shallow(<Switch onChange={changeHandle}/>);
+        expect(shallowToJson(wrapper)).toMatchSnapshot();
         wrapper.find('input').simulate('change', {target: wrapper});
         expect(changeHandle).toBeCalled();
     });
     it('Should call onClick callback', () => {
         const clickHandle = jest.fn();
         const wrapper = shallow(<Switch onClick={clickHandle}/>);
+        expect(shallowToJson(wrapper)).toMatchSnapshot();
         wrapper.find('input').simulate('click', {target: wrapper});
         expect(clickHandle).toBeCalled();
     });

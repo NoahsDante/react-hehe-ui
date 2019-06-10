@@ -1,6 +1,6 @@
 import React from 'react';
 import {render, mount, shallow} from 'enzyme';
-import {renderToJson} from 'enzyme-to-json';
+import {renderToJson, mountToJson} from 'enzyme-to-json';
 import SearchBar from '../index';
 
 describe('SearchBar', () => {
@@ -14,6 +14,7 @@ describe('SearchBar', () => {
     it('Should autoFocus',() => {
         const focusHandle = jest.fn();
         const wrapper = mount( <SearchBar placeholder="自动获取光标" onFocus={focusHandle} />);
+        expect(mountToJson(wrapper)).toMatchSnapshot();
         wrapper.find('input[type="search"]').simulate('focus');
         expect(focusHandle).toBeCalled();
 

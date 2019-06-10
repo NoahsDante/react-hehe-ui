@@ -1,6 +1,6 @@
 import React from 'react';
 import {render, mount, shallow} from 'enzyme';
-import {renderToJson} from 'enzyme-to-json';
+import {shallowToJson, renderToJson} from 'enzyme-to-json';
 import NoticeBar from '../index';
 
 describe('NoticeBar', () => {
@@ -19,6 +19,7 @@ describe('NoticeBar', () => {
     it('Should call click callback',() => {
         const clickHandle = jest.fn();
         const wrapper = shallow(<NoticeBar  mode="link" onClick={clickHandle}/>);
+        expect(shallowToJson(wrapper)).toMatchSnapshot();
         wrapper.find(prefixCls).simulate('click');
         expect(clickHandle).toBeCalled();
 

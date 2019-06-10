@@ -6,9 +6,9 @@ import CardBody from '../CardBody';
 describe('CardBody', () => {
     const prefixCls = '.hehe-card-body';
     it('should output a CardBody', () => {
-        const warpper = render(<CardBody>CardBody</CardBody>);
-        expect(renderToJson(warpper)).toMatchSnapshot();
-        expect(warpper.is(prefixCls)).toBe(true);
+        const wrapper = render(<CardBody>CardBody</CardBody>);
+        expect(renderToJson(wrapper)).toMatchSnapshot();
+        expect(wrapper.is(prefixCls)).toBe(true);
     });
 });
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import {render, mount, shallow} from 'enzyme';
-import {renderToJson} from 'enzyme-to-json';
+import {renderToJson,shallowToJson} from 'enzyme-to-json';
 import WingBlank from '../index';
 
 describe('WingBlank', () => {
@@ -13,6 +13,7 @@ describe('WingBlank', () => {
     });
     it('Should set props size', () => {
         const wrapper = shallow( <WingBlank size='md'/>);
+        expect(shallowToJson(wrapper)).toMatchSnapshot();
         expect(wrapper.find(`${prefixCls}-md`)).toHaveLength(1);
         wrapper.setProps({size:'lg'});
         expect(wrapper.find(`${prefixCls}-lg`)).toHaveLength(1);

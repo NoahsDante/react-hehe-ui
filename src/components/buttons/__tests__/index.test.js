@@ -1,6 +1,6 @@
 import React from 'react';
 import {render, mount, shallow} from 'enzyme';
-import {renderToJson} from 'enzyme-to-json';
+import {renderToJson,mountToJson} from 'enzyme-to-json';
 import Button from '../index';
 
 describe('Button', () => {
@@ -24,7 +24,7 @@ describe('Button', () => {
         const clickHandle = jest.fn();
         const wrapper = mount(<Button disabled onClick={clickHandle}></Button>);
         const disabledElement = wrapper.find(`${prefixCls}-disabled`);
-        expect(renderToJson(wrapper)).toMatchSnapshot();
+        expect(mountToJson(wrapper)).toMatchSnapshot();
         disabledElement.simulate('click');
         expect(disabledElement).toHaveLength(1);
         expect(clickHandle).not.toHaveBeenCalled();
@@ -32,6 +32,7 @@ describe('Button', () => {
     it('Should call onClick callback', () => {
         const clickHandle = jest.fn();
         const wrapper = mount(<Button onClick={clickHandle}></Button>);
+        expect(mountToJson(wrapper)).toMatchSnapshot();
         wrapper.find(prefixCls).simulate('click');
         expect(clickHandle).toHaveBeenCalled();
     });

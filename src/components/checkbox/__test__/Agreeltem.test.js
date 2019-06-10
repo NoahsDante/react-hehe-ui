@@ -1,6 +1,6 @@
 import React from 'react';
 import {render, mount, shallow} from 'enzyme';
-import {renderToJson} from 'enzyme-to-json';
+import {renderToJson,mountToJson} from 'enzyme-to-json';
 import AgreeItem from '../AgreeItem';
 
 describe('AgreeItem', () => {
@@ -14,6 +14,7 @@ describe('AgreeItem', () => {
     it('Should return checkbox change', function () {
         const changeHandle = jest.fn();
         const wrapper = mount(<AgreeItem onChange={changeHandle}/>);
+        expect(mountToJson(wrapper)).toMatchSnapshot();
         wrapper.find('input[type="checkbox"]').simulate('change', {target: {checked: true}});
         expect(wrapper.find('input[type="checkbox"]').prop('checked')).toBe(true);
         wrapper.find('input[type="checkbox"]').simulate('change', {target: {checked: false}});

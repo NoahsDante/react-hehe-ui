@@ -1,6 +1,6 @@
 import React from 'react';
 import {render, mount, shallow} from 'enzyme';
-import {renderToJson} from 'enzyme-to-json';
+import {shallowToJson, renderToJson} from 'enzyme-to-json';
 import Grid from '../index';
 
 describe('Grid', () => {
@@ -27,6 +27,7 @@ describe('Grid', () => {
     it('Should call click callback', () => {
         const clickHandle = jest.fn();
         const wrapper = shallow(<Grid data={data} onClick={clickHandle}/>);
+        expect(shallowToJson(wrapper)).toMatchSnapshot();
         wrapper.find(`${prefixCls}-item`).first().simulate('click');
         expect(clickHandle).toBeCalled();
     });

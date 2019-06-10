@@ -1,6 +1,6 @@
 import React from 'react';
 import {render, mount, shallow} from 'enzyme';
-import {renderToJson} from 'enzyme-to-json';
+import {renderToJson,mountToJson} from 'enzyme-to-json';
 import Drawer from '../index';
 
 describe('Drawer', () => {
@@ -18,6 +18,7 @@ describe('Drawer', () => {
           open={false}
           sidebar={<div>Drawer展开</div>}
         />);
+        expect(mountToJson(wrapper)).toMatchSnapshot();
         wrapper.setProps({open: true});
         expect(wrapper.find('.hehe-drawer-overlay').prop('style')).toEqual({"opacity": 1, "visibility": "visible"});
         wrapper.setProps({open: false});
@@ -29,6 +30,7 @@ describe('Drawer', () => {
           sidebar={<div>Drawer展开</div>}
         />);
         const domNode = wrapper.find('.hehe-drawer-sidebar').getDOMNode();
+        expect(mountToJson(wrapper)).toMatchSnapshot();
         console.log(getComputedStyle(domNode));
         wrapper.setProps({docked: true});
         console.log(getComputedStyle(domNode));

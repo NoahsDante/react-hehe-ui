@@ -1,6 +1,6 @@
 import React from 'react';
 import {render, mount, shallow} from 'enzyme';
-import {renderToJson} from 'enzyme-to-json';
+import {renderToJson,mountToJson} from 'enzyme-to-json';
 import List from '../index';
 
 describe('List', () => {
@@ -36,6 +36,7 @@ describe('List', () => {
               </List.Item>
           </List>
         );
+        expect(mountToJson(wrapper)).toMatchSnapshot();
         wrapper.find(`${prefixCls}-item`).simulate('click');
         expect(clickHandle).toBeCalled();
     });

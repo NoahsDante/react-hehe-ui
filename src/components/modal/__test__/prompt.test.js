@@ -1,6 +1,7 @@
 import React from 'react';
 import {render, mount, shallow} from 'enzyme';
 import {PromptElement} from '../prompt';
+import {mountToJson} from "enzyme-to-json";
 
 describe('PromptElement', () => {
     const prefixCls = '.hehe-modal';
@@ -21,10 +22,12 @@ describe('PromptElement', () => {
     }
     it('Should out a PromptElement', () => {
         const wrapper = mount(<PromptElement {...props}/>);
+        expect(mountToJson(wrapper)).toMatchSnapshot();
         expect(wrapper.find(`${prefixCls}-input-container`)).toHaveLength(1);
     });
     it('Should call click callback', () => {
         const wrapper = mount(<PromptElement {...props}/>);
+        expect(mountToJson(wrapper)).toMatchSnapshot();
         wrapper.find(`${prefixCls}-button`).at(1).simulate('click');
         expect(clickHandle).toBeCalled();
         expect(clickHandle).toHaveReturnedWith('100');
